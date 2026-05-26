@@ -81,6 +81,41 @@ It opens the question into seven angles, judges how they fit, locks the ones tha
 
 Four of seven trios lock — the case for B holds. The three that *don't* are all one thing: whether the equity is actually worth it. The math won't pretend to know that, so it hands that part back to you. **That's the difference — an answer that shows its own seams.**
 
+## More real runs
+
+**`/converge` — when it all actually fits.** Ask whether an argument holds; if every claim backs the next, you get **done = true** — not a maybe:
+
+```
+╭─ terminals · converge ──────────────────────────────────╮
+│ answer  →  the case for a 4-day week holds              │
+│                                                         │
+│ locked  ▸ all 7 trios — every claim backs the next      │
+│           e.g. focus + cost-neutral + fewer meetings    │
+│                                                         │
+│ r 1.00   ·   phi 1.00   ·   done = true ✓               │
+╰─────────────────────────────────────────────────────────╯
+```
+
+**`/frame` — start from your own folder.** Point it at a pile of notes; it reads them, lays them on the grid, and tells you what coheres and what's still open:
+
+```
+╭─ terminals · frame ─────────────────────────────────────╮
+│ read    ▸ 7 notes from your folder → the 7-grid         │
+│ answer  →  not settled yet — leans remote, not done     │
+│                                                         │
+│ locked  ▸ flexibility + lease savings + hiring          │
+│         ▸ productivity + flexibility + async            │
+│ open    ▸ two threads still pull against it:            │
+│           onboarding  ·  roles needing in-person        │
+│                                                         │
+│ r 0.43   ·   phi 0.76   ·   partial — 2 of 7 locked     │
+╰─────────────────────────────────────────────────────────╯
+```
+
+That's the honest read: your folder *isn't* decided yet. Two threads cohere, two still pull against them — so it hands you the map instead of a fake verdict.
+
+Same five words, three shapes of answer — a confident pick with one caveat, a clean *done*, and an honest *not yet* — each carrying its receipt.
+
 ## The mental model — Point · Line · Lock
 
 ```
@@ -99,18 +134,7 @@ When all seven Lock, the answer is **done = true**. Same three whether *you* typ
 
 ## The receipt
 
-Every word hands back a **witness** — a proof you can check, not just a prompt:
-
-```
-   ┌─ receipt ───────────────────────┐
-   │ claim    take the startup offer  │
-   │ backs    growth · mission · fit  │
-   │ verdict  lean yes  ✓             │
-   │ loose    is the equity worth it  │
-   └──────────────────────────────────┘
-```
-
-If it can't lock everything, it says so plainly and shows the best partial plus what's still loose. It never fakes "done."
+Every word hands back a **witness** — a proof you can check, not just a prompt: the answer, the trios that back it, how sure it is (`r`, `phi`), and what (if anything) is still loose. If it can't lock everything, it says so plainly and shows the best partial. It never fakes "done."
 
 ## Three shapes, one power
 
