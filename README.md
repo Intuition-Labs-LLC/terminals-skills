@@ -1,89 +1,97 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- Copyright (c) 2026 Tej Desai / Intuition Labs LLC -->
 
-# Terminals
+<p align="center">
+  <img src="docs/fano.svg" alt="The 7-grid: seven ideas, seven trios, every pair of ideas sharing exactly one trio" width="300">
+</p>
 
-**Five small words that turn a messy pile of ideas into an answer — right, then best, then proven.**
+<h1 align="center">Terminals</h1>
 
-You type one word. It does the thinking-shape for you and hands back an answer *with a receipt* that shows the answer holds together. Works in Claude Code, OpenCode, and any tool that speaks MCP.
+<p align="center"><b>Five small words that turn a messy pile of ideas into an answer — right, then best, then proven.</b></p>
 
-## Install (two lines)
+You type one word. It does the thinking-shape for you and hands back an answer **with a receipt** that shows it holds together.
+
+```
+   a mess            on the 7-grid       they lock in          done
+
+   •  •  •            1  2  3            1──2──3           ✓ one answer
+     •  •      ──▶     4 5 6      ──▶     4──5──6    ──▶    ▦ + a receipt
+   •  •  •              7                   7                proven, not guessed
+```
+
+## Install
 
 ```
 /plugin marketplace add wheattoast11/terminals-skills
 /plugin install terminals@terminals
 ```
 
-That's it. Now type `/converge` and go. No API key. No setup. The math runs on your machine.
+Type `/converge` and go. No API key. No setup. The math runs on your machine.
 
 ## The five words
 
-| type this | it means | what you get |
+```
+   a question
+       │
+       ├─ /explore   fan out every angle
+       ├─ /frame     start from my own notes
+       ▼
+   /converge   lock them  ──▶  ANSWER + receipt
+       ▼
+   /optimize   same answer, cheapest form
+
+   /recommend  =  explore ▸ converge ▸ optimize   ·  done for you
+```
+
+| word | it means | you get |
 |---|---|---|
-| `/explore` | "open it up" | every angle on your question, spread out on purpose |
-| `/converge` | "bring it together" | one right answer **+ the receipt** that proves it fits |
-| `/optimize` | "make it the best one" | the same answer, but the cheapest, cleanest version |
-| `/recommend` | "you decide" | it explores, converges, and optimizes for you, then hands you its pick **+ the receipt** |
-| `/frame` | "start from my stuff" | point it at the folder you're already in; it pulls your context in and goes |
+| `/explore` | open it up | every angle, spread out on purpose |
+| `/converge` | bring it together | one right answer **+ the receipt** |
+| `/optimize` | make it the best one | same answer, cheapest and cleanest |
+| `/recommend` | you decide | it runs the whole path and hands you its pick |
+| `/frame` | start from my stuff | point it at your folder; it pulls your context in |
 
-The normal path is `explore → converge → optimize`. `/recommend` runs that whole path for you. `/frame` is the on-ramp when you already have your own notes.
+## The mental model — Point · Line · Lock
 
-## The mental model
+```
+   searching             knowing
+    \  |  /               >  >  >
+   ── • ──     ──▶        >  >  >       ✓ done = true
+    /  |  \               >  >  >
+   (every which way)     (all agree)
+```
 
-**Point · Line · Lock is the whole thing.**
+- a **Point** is one idea — seven sit on the grid
+- a **Line** is a trio of ideas that has to agree
+- a **Lock** is the moment a trio snaps into agreement
 
-- A **Point** is one idea. Seven of them sit on the grid.
-- A **Line** is a trio of ideas that has to agree.
-- A **Lock** is the moment a Line clicks into agreement. When all seven Lock, the answer is done = true — and you get the receipt.
-
-Every word is just a move over those three:
-
-| word | the move |
-|---|---|
-| `/explore` | scatter the Points wide |
-| `/frame` | turn your own stuff into Points |
-| `/converge` | run the Locks → answer + receipt |
-| `/optimize` | find the cheapest way to Lock |
-| `/recommend` | place the Points, Lock them, and pick — for you |
-
-Same three primitives whether a human types the word or an agent reaches for it on its own. That is the entire surface. Nothing else to learn.
-
-## How it works (the short version)
-
-1. It lays your ideas on a **7-grid** — 7 ideas, 7 trios, every pair of ideas sharing exactly one trio. No idea gets lost, nothing is counted twice.
-2. It nudges the ideas in each trio toward agreement — the **lock-in**.
-3. When every trio locks in, the answer is **done = true**: it's not just an opinion, it provably hangs together.
-4. You get back the answer **and the receipt** — which trios locked, how sure it is, and what (if anything) didn't fit.
-
-If it *can't* lock everything in, it says so plainly and shows you the best partial plus what's still loose. It never fakes "done."
+When all seven Lock, the answer is **done = true**. Same three whether *you* type the word or the *agent* reaches for it. That's the entire surface — nothing else to learn.
 
 ## The receipt
 
-Every word returns a **witness** — a small record of `what it claims · what backs it · the verdict · why`. That's the difference: most tools give you a prompt; this gives you a proof you can check.
+Every word hands back a **witness** — a proof you can check, not just a prompt:
 
-## Offline by default
+```
+   ┌─ receipt ─────────────────┐
+   │ claim    "use Postgres"   │
+   │ backs    3 trios locked   │
+   │ verdict  done = true  ✓   │
+   │ why      they all agree   │
+   └───────────────────────────┘
+```
 
-The convergence math is plain Python, standard library only. No network, no key, nothing to sign up for. (You can wire in heavy outside research later if you want — it's off by default.)
-
-The *agent* that drives the verbs does make LLM calls (that's where tokens go, especially `/recommend`). If you want to see and cap that spend, run it behind Logfire Gateway — optional, opt-in, keys never touch disk. See [docs/OBSERVE.md](docs/OBSERVE.md).
+If it can't lock everything, it says so plainly and shows the best partial plus what's still loose. It never fakes "done."
 
 ## Three shapes, one power
 
-Each word ships three ways so it fits how you work:
+- **Command** — you type `/converge`
+- **Skill** — the agent reaches for it on its own when it sees a messy thoughtspace
+- **MCP tool** — any editor calls the math engine directly
 
-- **Command** — you type `/converge`.
-- **Skill** — the agent reaches for it on its own when it sees a messy thoughtspace.
-- **MCP tool** — any editor can call the math engine directly.
+## Offline by default
+
+Plain Python, standard library only — no network, no key, nothing to sign up for. Want to see and cap what the agent spends (especially `/recommend`)? Run it behind Logfire Gateway — opt-in, keys never touch disk: see [docs/OBSERVE.md](docs/OBSERVE.md).
 
 ## License
 
-Split, on purpose:
-
-- The words, skills, and docs are **CC BY 4.0** — use them, learn from them, share them.
-- The engine is **AGPL-3.0** — improvements to the engine stay open.
-
-See `LICENSE` (engine) and `LICENSE.docs` (words). Built on published work — see `NOTICE` for the papers and the math credits.
-
-## Credit
-
-The convergence method is the published "Terminals OS paradigm" by Tej Desai / Intuition Labs (the 7-grid, the lock-in, done=true). DOIs are listed in `NOTICE`.
+Split, on purpose: the words and docs are **CC BY 4.0**; the engine is **AGPL-3.0**. SPDX on every file. Built on the published "Terminals OS paradigm" by Tej Desai / Intuition Labs — the 7-grid, the lock-in, done=true. DOIs in [NOTICE](NOTICE).
