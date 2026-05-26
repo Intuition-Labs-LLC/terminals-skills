@@ -72,12 +72,12 @@ When all seven Lock, the answer is **done = true**. Same three whether *you* typ
 Every word hands back a **witness** — a proof you can check, not just a prompt:
 
 ```
-   ┌─ receipt ─────────────────┐
-   │ claim    "use Postgres"   │
-   │ backs    3 trios locked   │
-   │ verdict  done = true  ✓   │
-   │ why      they all agree   │
-   └───────────────────────────┘
+   ┌─ receipt ───────────────────────┐
+   │ claim    take the startup offer  │
+   │ backs    growth · mission · fit  │
+   │ verdict  lean yes  ✓             │
+   │ loose    is the equity worth it  │
+   └──────────────────────────────────┘
 ```
 
 If it can't lock everything, it says so plainly and shows the best partial plus what's still loose. It never fakes "done."

@@ -23,4 +23,15 @@ Run this protocol. Keep every word small.
    - **partial:** not everything locked. Say so plainly. Give the best partial, name the loose trios and *why* they're loose, and the one next move that would tighten them (or split the problem).
 5. **Always show the receipt.** End with the witness: what the answer claims, which trios back it, the verdict, and the one-line why. Never fake "done."
 
-Output shape: the **answer** first (plain English), then **the receipt** (a short block). That's it.
+Output shape: the **answer** first (plain English), then **the receipt** as a card:
+
+```
+  ╭───────────────────────  terminals · converge  ──╮
+  │  answer  →  <one plain line>                      │
+  │  locked  ▸ <trio> ▸ <trio> ▸ <trio>               │
+  │  loose   ▸ <trio> — <what would tighten it>       │
+  │  r <0..1>   ·   phi <0..1>   ·   done = true ✓     │
+  ╰───────────────────────────────────────────────────╯
+```
+
+Use the user's own plain words inside the card — no jargon, whatever their domain. Drop the `loose` line when nothing is loose; show `partial` instead of `done = true ✓` when it didn't fully lock.

@@ -28,10 +28,10 @@
   </g>
 
   <!-- the seventh line is a circle, drawn in amber so the curved trio reads as a line too -->
-  <circle cx="210" cy="274" r="81" fill="none" stroke="#f5b14b" stroke-width="3"/>
+  <circle cx="210" cy="274" r="81" fill="none" stroke="#f59e0b" stroke-width="3"/>
 
-  <!-- seven points -->
-  <g fill="#18c6e6" stroke="#0a1322" stroke-width="3" filter="url(#glow)">
+  <!-- seven points (Intuition Labs signature teal) -->
+  <g fill="#9ecfd0" stroke="#0a1322" stroke-width="3" filter="url(#glow)">
     <circle cx="210" cy="112" r="16"/>
     <circle cx="70"  cy="355" r="16"/>
     <circle cx="350" cy="355" r="16"/>

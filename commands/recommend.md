@@ -21,3 +21,18 @@ Run this protocol. Use your own judgment at every step — that's the point of t
 5. **Back it with the receipt.** Show the witness: which trios locked (why the pick holds), the agree-meter and sure-o-meter, and 1–2 alternatives with the one reason each lost. If the space came back **partial**, say "I can't fully back a pick yet" and give the best lean plus the one thing that would settle it.
 
 Pick first, in plain words. Receipt second. No fence-sitting, no fake certainty.
+
+End with the witness as a card:
+
+```
+  ╭───────────────────────  terminals · recommend  ──╮
+  │  pick     →  <your call, one line>                 │
+  │  because  →  <the single biggest reason>           │
+  │  locked   ▸ <trio> ▸ <trio> ▸ <trio>               │
+  │  loose    ▸ <trio> — <the one thing to verify>     │
+  │  also     ▸ <alternative> — <its one real merit>   │
+  │  r <0..1>   ·   phi <0..1>   ·   done = true ✓      │
+  ╰────────────────────────────────────────────────────╯
+```
+
+Use the user's own plain words — no jargon, any domain. If it came back partial, write `partial` and let `loose` carry the open question.
