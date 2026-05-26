@@ -10,7 +10,7 @@ You type one word. It does the thinking-shape for you and hands back an answer *
 ## Install (two lines)
 
 ```
-/plugin marketplace add wheattoast11/terminals
+/plugin marketplace add wheattoast11/terminals-skills
 /plugin install terminals@terminals
 ```
 
