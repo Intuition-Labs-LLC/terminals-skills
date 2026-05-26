@@ -143,6 +143,10 @@ def handle(msg):
     method = msg.get("method")
     id_ = msg.get("id")
     has_id = "id" in msg and msg["id"] is not None
+    # A message with no id, or in the notifications/* namespace, is a notification:
+    # per JSON-RPC it gets NO response (never reply with "id": null).
+    if not has_id or (method or "").startswith("notifications/"):
+        return
     if method == "initialize":
         proto = (msg.get("params") or {}).get("protocolVersion") or DEFAULT_PROTOCOL
         _result(id_, {
@@ -150,8 +154,6 @@ def handle(msg):
             "capabilities": {"tools": {"listChanged": False}},
             "serverInfo": {"name": SERVER_NAME, "version": SERVER_VERSION},
         })
-    elif method == "notifications/initialized":
-        return  # notification: no reply
     elif method == "ping":
         _result(id_, {})
     elif method == "tools/list":
@@ -160,14 +162,16 @@ def handle(msg):
         params = msg.get("params") or {}
         name = params.get("name")
         args = params.get("arguments") or {}
+        if not name:  # malformed request, not a tool failure
+            _error(id_, -32602, "tools/call is missing params.name")
+            return
         try:
             out = dispatch(name, args)
             _result(id_, {"content": [{"type": "text", "text": json.dumps(out, indent=2)}]})
         except Exception as exc:  # a tool failure is a result with isError, not a protocol error
             _result(id_, {"content": [{"type": "text", "text": f"error: {exc}"}], "isError": True})
-    elif has_id:
+    else:
         _error(id_, -32601, f"method not found: {method}")
-    # unknown notification: ignore
 
 
 def main():
@@ -178,12 +182,18 @@ def main():
         try:
             msg = json.loads(line)
         except json.JSONDecodeError:
+            sys.stderr.write("terminals: skipped a non-JSON line\n")
+            sys.stderr.flush()
             continue
         if isinstance(msg, list):
             for m in msg:
-                handle(m)
+                if isinstance(m, dict):
+                    handle(m)
         elif isinstance(msg, dict):
             handle(msg)
+        else:
+            sys.stderr.write("terminals: skipped a non-object JSON-RPC frame\n")
+            sys.stderr.flush()
 
 
 if __name__ == "__main__":

@@ -15,13 +15,14 @@
 
 event="${1:-unknown}"
 
+# Always drain stdin (the event JSON) first, even when inert, so the host's
+# write to our stdin can never hit a closed pipe. No jq dependency.
+payload="$(cat 2>/dev/null || true)"
+
 # Inert by default. One env var turns on observation.
 if [ "${TERMINALS_HOOKS:-0}" != "1" ]; then
   exit 0
 fi
-
-# Drain stdin (the event JSON) so the writer never blocks; no jq dependency.
-payload="$(cat 2>/dev/null || true)"
 
 log_dir="${TERMINALS_HOOK_LOG_DIR:-$HOME/.terminals}"
 mkdir -p "$log_dir" 2>/dev/null || exit 0

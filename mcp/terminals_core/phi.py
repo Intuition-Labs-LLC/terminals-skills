@@ -18,7 +18,7 @@ def phi_from_phases(phases, nbins=12):
     All phases in one bin -> H=0 -> phi=1 (locked, sure). Phases spread evenly
     -> H high -> phi low (searching).
     """
-    if not phases:
+    if not phases or nbins <= 1:
         return 0.0
     counts = [0.0] * nbins
     two_pi = 2.0 * math.pi

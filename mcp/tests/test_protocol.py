@@ -64,3 +64,20 @@ def test_tool_error_is_reported_as_iserror():
     ])
     by_id = {m.get("id"): m for m in out if "id" in m}
     assert by_id[5]["result"]["isError"] is True
+
+
+def test_notification_method_gets_no_reply_and_never_id_null():
+    # a request-method sent without an id is a notification -> no response, ever.
+    out, err = _run([
+        {"jsonrpc": "2.0", "method": "ping"},  # notification (no id)
+        {"jsonrpc": "2.0", "id": 1, "method": "initialize",
+         "params": {"protocolVersion": "2025-06-18", "capabilities": {}}},
+    ])
+    assert all(("id" not in m) or (m["id"] is not None) for m in out)  # no "id": null frame
+    assert [m.get("id") for m in out if "id" in m] == [1]  # only initialize replied
+
+
+def test_tools_call_missing_name_is_invalid_params():
+    out, err = _run([{"jsonrpc": "2.0", "id": 7, "method": "tools/call", "params": {}}])
+    by_id = {m.get("id"): m for m in out if "id" in m}
+    assert by_id[7]["error"]["code"] == -32602

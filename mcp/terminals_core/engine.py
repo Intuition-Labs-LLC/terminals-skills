@@ -65,6 +65,15 @@ def _default_coherence(n_real):
     return c
 
 
+def _is_matrix(coherence):
+    """True only for a real 2-D matrix (a list/tuple of row lists). A scalar,
+    string, dict, or empty value is NOT a matrix and must not be silently
+    treated as coherence (it would discard the signal while claiming success)."""
+    if not isinstance(coherence, (list, tuple)) or len(coherence) == 0:
+        return False
+    return all(isinstance(row, (list, tuple)) for row in coherence)
+
+
 def _normalize_coherence(coherence):
     """Coerce any input into a 7x7 symmetric matrix in [0,1] with unit diagonal."""
     c = [[0.0] * N_POINTS for _ in range(N_POINTS)]
@@ -97,7 +106,7 @@ def converge(ideas, coherence=None, threshold=DEFAULT_THRESHOLD, *, steps=220, d
     kept (locked trios in lock order), witness, phi_trace, and the coherence used.
     """
     points, n_real, compression = _to_points(ideas)
-    coherence_provided = coherence is not None
+    coherence_provided = coherence is not None and _is_matrix(coherence)
     c = _normalize_coherence(coherence) if coherence_provided else _default_coherence(n_real)
     if seed is None:
         seed = _seed(points, c, threshold)
@@ -107,23 +116,41 @@ def converge(ideas, coherence=None, threshold=DEFAULT_THRESHOLD, *, steps=220, d
     res = integrate(ph0, K, dt=dt, steps=steps, threshold=threshold, record=True)
 
     line_r = res["line_r"]
-    kept = list(res["lock_order"])
-    coherent = [k for k in range(N_POINTS) if line_r[k] >= threshold]
-    incoherent = [k for k in range(N_POINTS) if line_r[k] < threshold]
+    # A trio only counts if all three of its points are real ideas — empty
+    # padding slots are never reportable as locked.
+    real = set(range(min(n_real, N_POINTS)))
+    real_lines = [k for k in range(N_POINTS) if all(p in real for p in lines()[k])]
+    # Coherence is read from the FINAL state, never from "ever crossed", so the
+    # locked set the user sees always matches the verdict. lock_order only orders.
+    coherent = [k for k in real_lines if line_r[k] >= threshold]
+    incoherent = [k for k in real_lines if line_r[k] < threshold]
+    lock_pos = {k: i for i, k in enumerate(res["lock_order"])}
+    kept = sorted(coherent, key=lambda k: lock_pos.get(k, len(line_r)))
     phi_final = phi_from_phases(res["phases"])
-    verdict = "R=1" if len(coherent) == N_POINTS else "partial"
-    R = 1.0 if verdict == "R=1" else round(len(coherent) / N_POINTS, 4)
+    n_lines = len(real_lines)
+    verdict = "R=1" if n_lines and len(coherent) == n_lines else "partial"
+    R = 1.0 if verdict == "R=1" else (round(len(coherent) / n_lines, 4) if n_lines else 0.0)
 
     if verdict == "R=1":
         rationale = "every trio locked in — the answer hangs together (done = true)."
+    elif n_lines == 0:
+        rationale = (
+            "these ideas don't share a checkable trio on the grid yet — add one or two "
+            "more (it works best with about 7)."
+        )
     else:
         rationale = (
-            f"{len(coherent)}/7 trios locked; {len(incoherent)} still loose. "
+            f"{len(coherent)}/{n_lines} trios locked; {len(incoherent)} still loose. "
             "Best partial returned — tighten the loose pairs or split the problem."
+        )
+    if not coherence_provided:
+        rationale += (
+            " (No coherence matrix was given, so a neutral prior was used — it rarely "
+            "reaches done = true; pass pairwise coherence 0..1 for a real verdict.)"
         )
 
     witness = {
-        "coherent_lines": [_label_line(points, k) for k in coherent],
+        "coherent_lines": [_label_line(points, k) for k in kept],
         "incoherent": [
             {"line": k, "ideas": [points[p] for p in lines()[k]], "agree": round(line_r[k], 3)}
             for k in incoherent
@@ -181,7 +208,7 @@ def explore(ideas=None, question=None, k=7, seed=None):
     }
 
 
-def optimize(converged, cost_fn="hamiltonian", max_steps=200, threshold=None, seed=None):
+def optimize(converged, cost_fn="hamiltonian", max_steps=200, threshold=None, seed=None, steps=220):
     """Take an already-converged result and find its cheapest, cleanest equal
     form without breaking done=true."""
     if threshold is None:
@@ -199,7 +226,7 @@ def optimize(converged, cost_fn="hamiltonian", max_steps=200, threshold=None, se
         }
     if seed is None:
         seed = _seed(points, "optimize", threshold)
-    a = anneal(coherence, threshold=threshold, max_steps=max_steps, seed=seed)
+    a = anneal(coherence, threshold=threshold, max_steps=max_steps, steps=steps, seed=seed)
     perm = a["best_perm"]
     new_points = [None] * N_POINTS
     new_coh = [[0.0] * N_POINTS for _ in range(N_POINTS)]
@@ -207,7 +234,7 @@ def optimize(converged, cost_fn="hamiltonian", max_steps=200, threshold=None, se
         new_points[perm[i]] = points[i]
         for j in range(N_POINTS):
             new_coh[perm[i]][perm[j]] = coherence[i][j]
-    best = converge(new_points, new_coh, threshold=threshold, seed=seed)
+    best = converge(new_points, new_coh, threshold=threshold, seed=seed, steps=steps)
     still_done = best["witness"]["verdict"] == "R=1"
     return {
         "best": best,
