@@ -28,6 +28,26 @@ That's it. Now type `/converge` and go. No API key. No setup. The math runs on y
 
 The normal path is `explore → converge → optimize`. `/recommend` runs that whole path for you. `/frame` is the on-ramp when you already have your own notes.
 
+## The mental model
+
+**Point · Line · Lock is the whole thing.**
+
+- A **Point** is one idea. Seven of them sit on the grid.
+- A **Line** is a trio of ideas that has to agree.
+- A **Lock** is the moment a Line clicks into agreement. When all seven Lock, the answer is done = true — and you get the receipt.
+
+Every word is just a move over those three:
+
+| word | the move |
+|---|---|
+| `/explore` | scatter the Points wide |
+| `/frame` | turn your own stuff into Points |
+| `/converge` | run the Locks → answer + receipt |
+| `/optimize` | find the cheapest way to Lock |
+| `/recommend` | place the Points, Lock them, and pick — for you |
+
+Same three primitives whether a human types the word or an agent reaches for it on its own. That is the entire surface. Nothing else to learn.
+
 ## How it works (the short version)
 
 1. It lays your ideas on a **7-grid** — 7 ideas, 7 trios, every pair of ideas sharing exactly one trio. No idea gets lost, nothing is counted twice.
