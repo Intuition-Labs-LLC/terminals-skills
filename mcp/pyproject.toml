@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "terminals-mcp"
+version = "0.1.0"
+description = "Terminals convergence engine — an offline MCP server (pure Python standard library)."
+requires-python = ">=3.9"
+license = "AGPL-3.0-or-later"
+authors = [{ name = "Tej Desai" }]
+keywords = ["mcp", "convergence", "fano", "kuramoto", "realizability", "reasoning"]
+dependencies = []
+
+[project.scripts]
+terminals-mcp = "terminals_core.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["terminals_core"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,29 @@
+Terminals — the convergence-verb marketplace
+Copyright (c) 2026 Tej Desai / Intuition Labs LLC
+
+This work is dual-licensed:
+  - Prompts, skills, agents, and docs (commands/, skills/, agents/, hooks/*.json, *.md):
+      CC BY 4.0          (see LICENSE.docs)
+  - The convergence engine and executables (mcp/, hooks/*.sh):
+      AGPL-3.0-or-later  (see LICENSE)
+Every authored source file carries an SPDX-License-Identifier header naming which applies.
+
+------------------------------------------------------------------------------
+Built on the author's published work — the "Terminals OS paradigm":
+  - Interactive Research Environments .................. doi:10.5281/zenodo.18906942
+  - Semantic Realizability: the Convergence-Realizability Identity
+                                                         doi:10.5281/zenodo.18992031
+  - Deterministic Mesh Compilation .................... doi:10.5281/zenodo.18906946
+  - Bounded Informational Time Crystals ............... doi:10.5281/zenodo.18906944
+  - Material Reality .................................. doi:10.5281/zenodo.18993958
+Reference code: https://github.com/wheattoast11/observable-computation
+
+------------------------------------------------------------------------------
+Math concepts referenced (public-domain mathematics, no third-party code bundled):
+  - Fano plane / Steiner triple system S(2,3,7) — finite projective geometry.
+  - Kuramoto model of coupled phase oscillators — Y. Kuramoto.
+  - Interaction combinators — Y. Lafont, 1997.
+  - Curry–Howard correspondence / realizability — the "witness" idea.
+
+The engine depends only on the Python standard library. No network and no API key
+are used for the core convergence math.

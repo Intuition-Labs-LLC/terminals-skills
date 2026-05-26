@@ -1,0 +1,18 @@
+{
+  "name": "terminals",
+  "owner": {
+    "name": "Tej Desai",
+    "url": "https://intuitionlabs.tech"
+  },
+  "metadata": {
+    "description": "The Terminals convergence-verb marketplace. Right, then best, then proven.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "terminals",
+      "source": "./",
+      "description": "Five verbs: /explore /converge /optimize /recommend /frame. Turn a messy idea-pile into an answer that carries its own receipt."
+    }
+  ]
+}
