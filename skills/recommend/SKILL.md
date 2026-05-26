@@ -11,7 +11,7 @@ The user is unsure and wants *you* to decide. Take the wheel. Run the full loop 
 
 ## The protocol
 
-1. **Explore (you, not them).** Generate up to 7 genuinely distinct strong angles, using your real conviction. For a hard or high-stakes call, spawn the `explorer` agent up to 7 times in parallel — one per angle (that's 7 subagents, so save it for genuinely hard calls); for an everyday call, do it inline.
+1. **Explore (you, not them).** Generate up to 7 genuinely distinct strong angles, using your real conviction. For a hard or high-stakes call, spawn the `explorer` agent up to 7 times in parallel — one per angle (that's 7 subagents of real token cost, so save it for genuinely hard calls; cap the spend with Logfire Gateway — see `docs/OBSERVE.md`); for an everyday call, do it inline.
 2. **Judge agreement.** Rate every pair 0..1, honestly. Build the coherence matrix.
 3. **Run the loop.** Call the `recommend` tool with `{ ideas, coherence }`. It converges, then (if done = true) optimizes, and returns a pick, alternatives, and the witness.
 4. **Make the call.** State your pick in one or two plain sentences — what to do and the single biggest reason. Don't hedge; you were asked to decide.

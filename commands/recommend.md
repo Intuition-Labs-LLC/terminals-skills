@@ -14,7 +14,7 @@ The problem: **$ARGUMENTS**
 
 Run this protocol. Use your own judgment at every step — that's the point of this verb.
 
-1. **Explore (you, not them).** Generate up to 7 genuinely distinct strong angles on the problem. Use your real conviction. For a hard or high-stakes problem, spawn the `explorer` agent up to 7 times (one per angle) in parallel to go deep; for an everyday one, do it inline.
+1. **Explore (you, not them).** Generate up to 7 genuinely distinct strong angles on the problem. Use your real conviction. For a hard or high-stakes problem, spawn the `explorer` agent up to 7 times (one per angle) in parallel to go deep (real token cost — cap it with Logfire Gateway, see `docs/OBSERVE.md`); for an everyday one, do it inline.
 2. **Judge agreement.** Rate every pair 0..1 for how well they fit — honestly. Build the coherence matrix.
 3. **Run the loop.** Call the `recommend` tool with `{ ideas, coherence }`. It converges (gets a sound answer + witness) and, if done = true, optimizes (the cheapest equal form), then returns a pick, alternatives, and the witness.
 4. **Make the call.** State your pick in one or two plain sentences — what to do and the single biggest reason. Don't hedge; you were asked to decide.

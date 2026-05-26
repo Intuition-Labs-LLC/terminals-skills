@@ -65,6 +65,8 @@ Every word returns a **witness** — a small record of `what it claims · what b
 
 The convergence math is plain Python, standard library only. No network, no key, nothing to sign up for. (You can wire in heavy outside research later if you want — it's off by default.)
 
+The *agent* that drives the verbs does make LLM calls (that's where tokens go, especially `/recommend`). If you want to see and cap that spend, run it behind Logfire Gateway — optional, opt-in, keys never touch disk. See [docs/OBSERVE.md](docs/OBSERVE.md).
+
 ## Three shapes, one power
 
 Each word ships three ways so it fits how you work:
