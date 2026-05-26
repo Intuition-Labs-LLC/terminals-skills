@@ -51,6 +51,36 @@ Type `/converge` and go. No API key. No setup. The math runs on your machine.
 | `/recommend` | you decide | it runs the whole path and hands you its pick |
 | `/frame` | start from my stuff | point it at your folder; it pulls your context in |
 
+## A real run
+
+You type:
+
+```
+/recommend Two offers. A: $185k senior IC at a 2,000-person public co — strong team,
+30-min commute, stable. B: $150k + 0.4% equity at a 25-person seed startup — mission I
+care about, fully remote, higher risk. I'm 31, want to grow into leadership. You decide.
+```
+
+It opens the question into seven angles, judges how they fit, locks the ones that agree, and hands back the call **with the receipt**. These are the engine's real numbers:
+
+```
+╭─ terminals · recommend ─────────────────────────────────╮
+│ pick    →  take the startup (offer B)                   │
+│ why     →  growth, mission & remote pull one way        │
+│                                                         │
+│ locked  ▸ growth + mission + remote                     │
+│         ▸ growth + optionality + team                   │
+│         ▸ leadership + remote + team                    │
+│         ▸ mission + leadership + optionality            │
+│ loose   ▸ every loose trio is the same thing —          │
+│           “is the equity worth it?”  ·  your call       │
+│                                                         │
+│ r 0.71   ·   phi 0.83   ·   partial — 4 of 7 locked     │
+╰─────────────────────────────────────────────────────────╯
+```
+
+Four of seven trios lock — the case for B holds. The three that *don't* are all one thing: whether the equity is actually worth it. The math won't pretend to know that, so it hands that part back to you. **That's the difference — an answer that shows its own seams.**
+
 ## The mental model — Point · Line · Lock
 
 ```
