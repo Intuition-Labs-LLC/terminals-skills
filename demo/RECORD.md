@@ -30,7 +30,7 @@ Font: **Geist Mono** (`brew install --cask font-geist-mono`, or Google Fonts). F
 
 ```bash
 # you have access; the repo is private
-/plugin marketplace add wheattoast11/terminals-skills
+/plugin marketplace add Intuition-Labs-LLC/terminals-skills
 /plugin install terminals@terminals
 ```
 

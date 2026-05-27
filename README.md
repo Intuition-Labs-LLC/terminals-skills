@@ -28,7 +28,7 @@ You type one word. It does the thinking-shape for you and hands back an answer *
 ## Install
 
 ```
-/plugin marketplace add wheattoast11/terminals-skills
+/plugin marketplace add Intuition-Labs-LLC/terminals-skills
 /plugin install terminals@terminals
 ```
 
