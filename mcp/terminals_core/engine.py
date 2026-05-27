@@ -133,7 +133,7 @@ def converge(ideas, coherence=None, threshold=DEFAULT_THRESHOLD, *, steps=220, d
     res = integrate(ph0, K, dt=dt, steps=steps, threshold=threshold, record=True)
 
     line_r = res["line_r"]
-    # A trio only counts if all three of its points are real ideas — empty
+    # A trio only counts if all three of its points are real ideas. Empty
     # padding slots are never reportable as locked.
     real = set(range(min(n_real, N_POINTS)))
     real_lines = [k for k in range(N_POINTS) if all(p in real for p in lines()[k])]
@@ -149,20 +149,20 @@ def converge(ideas, coherence=None, threshold=DEFAULT_THRESHOLD, *, steps=220, d
     R = 1.0 if verdict == "R=1" else (round(len(coherent) / n_lines, 4) if n_lines else 0.0)
 
     if verdict == "R=1":
-        rationale = "every trio locked in — the answer hangs together (done = true)."
+        rationale = "every trio locked in. The answer hangs together (done = true)."
     elif n_lines == 0:
         rationale = (
-            "these ideas don't share a checkable trio on the grid yet — add one or two "
+            "these ideas don't share a checkable trio on the grid yet. Add one or two "
             "more (it works best with about 7)."
         )
     else:
         rationale = (
             f"{len(coherent)}/{n_lines} trios locked; {len(incoherent)} still loose. "
-            "Best partial returned — tighten the loose pairs or split the problem."
+            "Best partial returned. Tighten the loose pairs or split the problem."
         )
     if not coherence_provided:
         rationale += (
-            " (No coherence matrix was given, so a neutral prior was used — it rarely "
+            " (No coherence matrix was given, so a neutral prior was used. It rarely "
             "reaches done = true; pass pairwise coherence 0..1 for a real verdict.)"
         )
 
@@ -203,7 +203,7 @@ def explore(ideas=None, question=None, k=7, seed=None):
         points, _n_real, compression = _to_points(ideas)
     else:
         points = [f"(angle {i})" for i in range(N_POINTS)]
-        compression = {"given": 0, "used": 0, "note": "template — fill the 7 angles, then /converge"}
+        compression = {"given": 0, "used": 0, "note": "template: fill the 7 angles, then /converge"}
     if seed is None:
         seed = _seed(points, question, "explore")
     rng = random.Random(seed)
@@ -236,7 +236,7 @@ def optimize(converged, cost_fn="hamiltonian", max_steps=200, threshold=None, se
     points = list(converged["points"])
     coherence = converged.get("coherence")
     was_done = converged.get("witness", {}).get("verdict") == "R=1"
-    if coherence is None:
+    if not _is_matrix(coherence):
         return {
             "best": converged,
             "cost_before": None,
@@ -244,6 +244,9 @@ def optimize(converged, cost_fn="hamiltonian", max_steps=200, threshold=None, se
             "R_held": True,
             "note": "no coherence matrix on the converged result; nothing to optimize.",
         }
+    # Normalize any caller-supplied matrix to a clean 7x7 before annealing, so a
+    # hand-crafted short/ragged coherence cannot raise IndexError downstream.
+    coherence = _normalize_coherence(coherence)
     if seed is None:
         seed = _seed(points, "optimize", threshold)
     a = anneal(coherence, threshold=threshold, max_steps=max_steps, steps=steps, seed=seed)
@@ -308,3 +311,31 @@ def frame(items, coherence=None, threshold=DEFAULT_THRESHOLD, seed=None):
         + compression["note"],
     }
     return {"framing": framing, **conv}
+
+
+def hold(prior, ideas, coherence=None, threshold=DEFAULT_THRESHOLD, seed=None):
+    """Re-check a prior settled answer against new state (converge with memory).
+
+    EXPERIMENTAL and dormant: present and tested, but intentionally NOT registered
+    in the MCP tool surface (server.py keeps the live verbs at five). It re-converges
+    on the new ideas and coherence, then diffs the result against the prior locked
+    set, reporting which trios came loose (drift) so the caller can fix the drift
+    instead of re-deciding from scratch.
+    """
+    now = converge(ideas, coherence, threshold=threshold, seed=seed)
+    prior_locked = {tuple(line["points"]) for line in (prior or {}).get("kept", [])}
+    now_locked = {tuple(line["points"]) for line in now["kept"]}
+    drifted = sorted(prior_locked - now_locked)
+    new_locks = sorted(now_locked - prior_locked)
+    held = sorted(prior_locked & now_locked)
+    return {
+        "still_holds": len(drifted) == 0,
+        "drifted": [list(t) for t in drifted],
+        "held": [list(t) for t in held],
+        "new": [list(t) for t in new_locks],
+        "verdict": now["witness"]["verdict"],
+        "R": now["R"],
+        "phi": now["phi"],
+        "order_parameter": now["order_parameter"],
+        "now": now,
+    }

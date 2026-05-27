@@ -15,11 +15,11 @@ The "get pickier over time" is a cooling schedule. We use **log cooling**:
 temperature T(k) = 1 / log(k + 2)
 ```
 
-It cools slowly enough to explore, and the step budget is **bounded** — a fixed `max_steps` — so the polish **always halts**. That bounded-recurrence guarantee comes straight from the published *Bounded Informational Time Crystals* work: the loop recurs, but within fixed bounds, so it can't run forever.
+It cools slowly enough to explore, and the step budget is **bounded** (a fixed `max_steps`), so the polish **always halts**. That bounded-recurrence guarantee comes straight from the published *Bounded Informational Time Crystals* work: the loop recurs within fixed bounds, so it can't run forever.
 
 ## The hard rule
 
-Every candidate arrangement is re-checked for done = true. **Any move that would unlock a trio is rejected outright** — annealing only ever wanders among sound arrangements. So `R_held` comes back true: the answer you started with is still the answer, just cheaper.
+Every candidate arrangement is re-checked for done = true. **Any move that would unlock a trio is rejected outright.** Annealing only ever wanders among arrangements that still hold (done = true / R=1, the trios staying locked). So `R_held` comes back true: the answer you started with is still the answer, just cheaper.
 
 ## What you get back
 

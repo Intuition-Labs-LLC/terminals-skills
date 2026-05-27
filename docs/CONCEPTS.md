@@ -11,9 +11,9 @@ Everything Terminals does sits on three words. If you only read one page, read t
 - a **Line** is a trio of ideas that has to agree
 - a **Lock** is the moment a trio snaps into agreement
 
-When all seven trios Lock, the answer is **done = true**: sound, and never guessed.
-Nothing else to learn. That's the entire surface, whether *you* type the word or
-the *agent* reaches for it.
+When all seven trios Lock, the answer is **done = true**: the ideas you scored all
+agree with each other. Nothing else to learn. That's the entire surface, whether
+*you* type the word or the *agent* reaches for it.
 
 ## The two meters
 
@@ -27,17 +27,19 @@ When `r` reaches 1, every trio agrees. That's **R = 1**, done = true.
 | word | tiny meaning | what you get |
 |---|---|---|
 | `/explore` | open it up | every angle, spread out on purpose, before you pick |
-| `/converge` | bring it together | one right answer **+ the receipt** |
+| `/converge` | bring it together | one coherent answer **+ the receipt** |
 | `/optimize` | make it the best one | same answer, the cheapest and cleanest version |
 | `/recommend` | you decide | it runs the whole path and hands you its pick + the receipt |
 | `/frame` | start from my stuff | point it at your folder; it pulls your context in and goes |
 
 ## The receipt (the witness)
 
-Every word hands back a **witness**, a proof you can check:
+Every word hands back a **witness**, a receipt you can check:
 the answer, the trios that back it, how sure it is (`r`, `φ`), and what (if
-anything) is still loose. If it can't lock everything, it says so plainly and
-shows the best partial. **It never fakes "done."** That honesty is the product.
+anything) is still loose. It shows the answer holds together under the coherence
+you supplied. It does not prove the answer is right in the world. If it can't lock
+everything, it says so plainly and shows the best partial. **It never fakes "done."**
+That honesty is the product.
 
 ## The smallest-word glossary
 
@@ -50,10 +52,10 @@ needs the hard name to *use* it. That stays in the receipts and the papers.
 | Steiner triple system S(2,3,7) | **the trios** | the 7 trios that cover every pair once: max coverage, zero waste |
 | Kuramoto synchronization | **the lock-in** | nudge ideas in the same trio until they agree |
 | order parameter `r` | **the agree-meter** | 0 = scattered, 1 = locked in |
-| R = 1 (Convergence-Realizability identity) | **done = true** | when everything locks, the answer is automatically sound |
+| R = 1 (Convergence-Realizability identity) | **done = true** | when every trio locks, the ideas all agree under your coherence scores |
 | φ = 1 − H/log\|V\| | **the sure-o-meter** | how sure the model is of the next step (0 lost … 1 knows) |
 | collapse / crystallization | **the click** | the moment "searching" flips to "knowing" |
-| realizability witness (Curry-Howard) | **the receipt** | the answer comes with proof it hangs together |
+| realizability witness (Curry-Howard) | **the receipt** | the answer comes with a check that it hangs together, given your coherence |
 | interaction combinators (γ/δ/ε) | **build / split / drop** | combine ideas, fan them out, throw out the dead ones |
 | J-operator | **the translator** | turns "what you want" into "what to actually run" (that's `/frame`) |
 | the Hamiltonian (min time-to-recovery) | **the cost-meter** | how much an answer costs in time/tokens/mess; lower is better |
@@ -68,6 +70,6 @@ are the engine's real numbers.
 
 ## Going deeper
 
-- Why "everything locked" means the answer is sound, and the math that backs each
+- What "everything locked" does and doesn't establish, and the math behind each
   meter: [`SEMANTIC-DENSITY.md`](SEMANTIC-DENSITY.md).
 - What the plugin can and can't do, and the safety posture: [`SECURITY.md`](SECURITY.md).

@@ -16,8 +16,8 @@ r = | average of e^(i·phase) over the points |      # 0 = scattered, 1 = all al
 ```
 
 You read `r` two ways:
-- **global r** — how aligned the whole set is.
-- **per-trio r** — how aligned one line's 3 ideas are. A trio is **locked** when its own `r` passes the threshold (default 0.85).
+- **global r**: how aligned the whole set is.
+- **per-trio r**: how aligned one line's 3 ideas are. A trio is **locked** when its own `r` passes the threshold (default 0.85).
 
 ## How agreement becomes a force
 
@@ -31,8 +31,8 @@ So a pair that genuinely agrees pulls together; a pair that clashes pushes apart
 
 ## Why a short run is enough
 
-The spinners have no drift of their own (zero natural frequency) — the only motion is the pull/push of coupling. That makes the system settle to a **fixed point** (a Banach-style attractor) rather than wandering forever, so a finite, bounded run reads the true answer. The settling-to-one-attractor behavior is validated empirically in the published work over thousands of trials.
+The spinners have no drift of their own (zero natural frequency), so the only motion is the pull/push of coupling. That makes the system settle to a **fixed point** (a Banach-style attractor) rather than wandering forever, so a finite, bounded run reads the settled answer. The settling-to-one-attractor behavior is validated empirically in the published work over thousands of trials.
 
 ## Source
 
-From the published work — *Material Reality* (doi:10.5281/zenodo.18993958) for Kuramoto convergence + the Banach fixed-point guarantee, and *Bounded Informational Time Crystals* (doi:10.5281/zenodo.18906944) for the bounded, halting recurrence.
+From the published work: *Material Reality* (doi:10.5281/zenodo.18993958) for Kuramoto convergence plus the Banach fixed-point guarantee, and *Bounded Informational Time Crystals* (doi:10.5281/zenodo.18906944) for the bounded, halting recurrence.

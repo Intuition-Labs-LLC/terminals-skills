@@ -7,7 +7,7 @@
 
 <h1 align="center">Terminals</h1>
 
-<p align="center"><b>Five small words that take a messy pile of ideas and hand back an answer that is right, then best, then proven.</b></p>
+<p align="center"><b>Five small words that turn a messy pile of ideas into a coherent answer, trimmed to its cheapest form, with a receipt you can check.</b></p>
 
 You type one word. It does the thinking-shape for you and hands back an answer with a receipt that shows it holds together.
 
@@ -105,7 +105,8 @@ This repo is the **skills marketplace**, the five verbs you type. It is one crit
 We ship what works today and label what is still coming.
 
 - **Live now.** The five verbs as commands and skills, the offline engine, a witness on every answer, and an experimental OpenCode flavor.
-- **Next.** Signed releases (Sigstore provenance and Merkle-root publication) so you can verify what you install. Bidirectional MCP, where the plugin asks the model, asks you, and renders the witness as live UI, added inert once the spec finalizes (2026-07-28).
+- **Next.** Two more verbs, designed and wired dormant (default off): `/act` turns a settled answer into real next steps through the tools your host already has, and `/hold` re-checks a decision as the world moves. Spec: [docs/ACT-AND-HOLD.md](docs/ACT-AND-HOLD.md).
+- **Then.** Signed releases (Sigstore provenance and Merkle-root publication) so you can verify what you install. Bidirectional MCP, where the plugin asks the model, asks you, and renders the witness as live UI, added inert once the spec finalizes (2026-07-28).
 - **The open problem.** Terminals is meant to give attention back rather than eat it, and there is no honest metric for that yet. We treat defining one as the real work. The why behind it: [intuitionlabs.tech](https://intuitionlabs.tech).
 
 ## License

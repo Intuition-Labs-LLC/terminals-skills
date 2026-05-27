@@ -3,7 +3,7 @@
 
 # The sure-o-meter (phi)
 
-**Tiny words:** how sure the system is — 0 = lost, 1 = it knows.
+**Tiny words:** how sure the system is. 0 = lost, 1 = it knows.
 
 ## What it is
 
@@ -13,9 +13,9 @@
 phi = 1 − H(P) / log|V|
 ```
 
-`H(P)` is the entropy of a distribution `P`; `log|V|` is the most entropy it could have. When `P` is spread out (lots of options, no commitment), `H` is high and `phi` is near 0 — "searching." When `P` collapses onto one choice, `H` drops and `phi` rises toward 1 — "knowing."
+`H(P)` is the entropy of a distribution `P`; `log|V|` is the most entropy it could have. When `P` is spread out (lots of options, no commitment), `H` is high and `phi` is near 0: "searching." When `P` collapses onto one choice, `H` drops and `phi` rises toward 1: "knowing."
 
-This is the same signal the lab reads live while a model generates text: a low-`phi` token is one the model is unsure about; a `phi`-spike is the moment it commits. The flip from low to high `phi` is the **click** — searching turning into knowing.
+This is the same signal the lab reads live while a model generates text: a low-`phi` token is one the model is unsure about; a `phi`-spike is the moment it commits. The flip from low to high `phi` is the **click**, searching turning into knowing.
 
 ## How it shows up here
 
@@ -24,10 +24,10 @@ In the 7-grid, `P` is the spread of the 7 phases around the circle. While the id
 ## phi vs the agree-meter r
 
 They move together but mean different things:
-- **r** (agree-meter) — how aligned the spinners are.
-- **phi** (sure-o-meter) — how concentrated, read as entropy collapse.
+- **r** (agree-meter): how aligned the spinners are.
+- **phi** (sure-o-meter): how concentrated, read as entropy collapse.
 
-Both rising toward 1 is the signature of a real convergence, not a forced one.
+When both rise toward 1, the convergence came from the ideas settling on their own rather than being forced.
 
 ## Source
 

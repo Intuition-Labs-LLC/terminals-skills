@@ -53,3 +53,29 @@ def test_nonfinite_and_out_of_range_threshold_sanitized():
         assert isinstance(t, float) and math.isfinite(t) and 0.0 < t <= 1.0, (bad, t)
         dumped = json.dumps(res)
         assert "NaN" not in dumped and "Infinity" not in dumped, bad
+
+
+def test_optimize_normalizes_short_coherence_no_indexerror():
+    """LOW audit finding: a hand-crafted converged object with a ragged/short
+    coherence must not raise IndexError. optimize normalizes any matrix to 7x7
+    before annealing."""
+    bad = {"points": ["a"] * 7, "coherence": [[1.0]], "witness": {"verdict": "R=1"}}
+    res = engine.optimize(bad)
+    assert "R_held" in res  # a real result, not an IndexError
+
+
+def test_hold_detects_drift_and_stays_dormant():
+    """engine.hold re-checks a prior answer against new state and reports drift.
+    It is intentionally NOT registered as a live MCP tool."""
+    from terminals_core import server
+
+    prior = engine.converge(IDEAS, HIGH)  # all trios locked
+    low = [[1.0 if i == j else 0.15 for j in range(7)] for i in range(7)]
+    fell_apart = engine.hold(prior, IDEAS, low)
+    assert fell_apart["still_holds"] is False
+    assert len(fell_apart["drifted"]) > 0
+    unchanged = engine.hold(prior, IDEAS, HIGH)
+    assert unchanged["still_holds"] is True
+    live = {t["name"] for t in server.TOOLS}
+    assert live == {"explore", "converge", "optimize", "recommend", "frame"}
+    assert live.isdisjoint({"hold", "act"})

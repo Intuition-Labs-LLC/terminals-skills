@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Copyright (c) 2026 Tej Desai / Intuition Labs LLC
-"""Terminals convergence engine — the math behind the five verbs.
+"""Terminals convergence engine: the math behind the five verbs.
 
 The agent supplies the meaning (ideas, and how much each pair agrees). This
 package supplies the math (the 7-grid, the lock-in, the order parameter, the

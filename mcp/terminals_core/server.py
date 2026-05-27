@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Copyright (c) 2026 Tej Desai / Intuition Labs LLC
-"""Terminals MCP server -- pure standard library, offline, no API key.
+"""Terminals MCP server: pure standard library, offline, no API key.
 
 Speaks the Model Context Protocol over stdio: newline-delimited JSON-RPC 2.0.
 Exposes five tools (explore, converge, optimize, recommend, frame). The math
@@ -27,10 +27,12 @@ TOOLS = [
     {
         "name": "converge",
         "description": (
-            "Bring a messy set of ideas together into one right answer with a receipt (R=1). "
+            "Bring a messy set of ideas together into one coherent answer with a checkable receipt. "
             "Pass the ideas and, ideally, a coherence matrix (how much each pair agrees, 0..1). "
             "Returns the locked trios, the agree-meter r, the sure-o-meter phi, done=true or "
-            "partial, and the witness (the proof it hangs together)."
+            "partial, and the witness: a certificate that the answer holds together under the "
+            "coherence you supplied. It shows internal consistency. It does not prove the "
+            "decision is correct in the world."
         ),
         "inputSchema": {
             "type": "object",

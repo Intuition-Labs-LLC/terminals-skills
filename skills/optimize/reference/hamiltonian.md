@@ -3,11 +3,11 @@
 
 # The cost-meter (the Hamiltonian)
 
-**Tiny words:** how much an answer costs — lower is better.
+**Tiny words:** how much an answer costs. Lower is better.
 
 ## What it is
 
-Once an answer is sound, there's usually more than one sound version of it. The **cost-meter** scores each version so you can pick the cheapest. In the lab this is the **Hamiltonian** — the quantity you minimize. Its headline reading is *time-to-recovery*: how fast you get to a working answer. Cheaper means fewer moving parts, less effort, less noise.
+Once an answer is sound (done = true / R=1: every trio of ideas locked together), there's usually more than one version of it that holds. "Sound" here means the ideas cohere under the coherence you supplied; it certifies internal consistency, not real-world correctness. The **cost-meter** scores each version so you can pick the cheapest. In the lab this is the **Hamiltonian**, the quantity you minimize. Its headline reading is *time-to-recovery*: how fast you get to a working answer. Cheaper means fewer moving parts, less effort, less noise.
 
 ## How the engine scores it
 
@@ -22,7 +22,7 @@ A tighter, faster-locking arrangement scores lower. `/optimize` searches the equ
 
 ## The rule it never breaks
 
-The cost-meter only ranks arrangements that are **already** done = true. `/optimize` will not accept a cheaper arrangement if it drops a trio that was locked. **Correct first, cheap second** — soundness is never traded for cost.
+The cost-meter only ranks arrangements that are **already** done = true. `/optimize` will not accept a cheaper arrangement if it drops a trio that was locked. **Correct first, cheap second.** Soundness is held fixed while cost drops.
 
 ## Source
 
