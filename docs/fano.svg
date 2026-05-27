@@ -3,7 +3,7 @@
 <!-- Copyright (c) 2026 Tej Desai / Intuition Labs LLC -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" width="420" height="420" role="img" aria-label="The 7-grid: seven ideas, seven trios, every pair of ideas on exactly one trio">
   <title>The 7-grid (Fano plane)</title>
-  <desc>Seven points, seven lines (three sides, three medians, one circle). Every pair of points lies on exactly one line — nothing lost, nothing double-counted.</desc>
+  <desc>Seven points, seven lines (three sides, three medians, one circle). Every pair of points lies on exactly one line, with nothing lost or double-counted.</desc>
   <defs>
     <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#11203a"/>
