@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 452" width="820" height="452" font-family="ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Seven business decisions mapped to personas, entry points, verb-chains, and the receipt each one yields">
+  <!-- SPDX-License-Identifier: CC-BY-4.0 -->
+  <!-- Copyright (c) 2026 Tej Desai / Intuition Labs LLC -->
+  <rect x="0" y="0" width="820" height="452" rx="16" fill="#0b1011"/>
+
+  <text x="26" y="42" fill="#e9f0f0" font-size="22" font-weight="700">seven decisions · seven journeys</text>
+  <text x="26" y="66" fill="#8aa3a3" font-size="12" font-family="ui-monospace, monospace">who decides → where they enter → the chain they run → the receipt they get</text>
+
+  <!-- column captions -->
+  <g font-size="10.5" font-family="ui-monospace, monospace" fill="#7f9a9c" letter-spacing="1.5">
+    <text x="26" y="92">who decides</text>
+    <text x="190" y="92">enter</text>
+    <text x="300" y="92">the chain — the loop</text>
+    <text x="636" y="92">receipt</text>
+  </g>
+  <line x1="26" y1="100" x2="796" y2="100" stroke="rgba(158,207,208,0.16)" stroke-width="1"/>
+
+  <!-- row separators -->
+  <g stroke="rgba(158,207,208,0.08)" stroke-width="1">
+    <line x1="26" y1="147" x2="796" y2="147"/>
+    <line x1="26" y1="189" x2="796" y2="189"/>
+    <line x1="26" y1="231" x2="796" y2="231"/>
+    <line x1="26" y1="273" x2="796" y2="273"/>
+    <line x1="26" y1="315" x2="796" y2="315"/>
+    <line x1="26" y1="357" x2="796" y2="357"/>
+  </g>
+
+  <!-- helpers: persona (ink bold), enter (teal caps), chain (mono, verbs teal) -->
+  <g font-size="13">
+    <text x="26" y="130" fill="#e9f0f0" font-weight="600">The Founder</text>
+    <text x="26" y="172" fill="#e9f0f0" font-weight="600">The CEO / Board</text>
+    <text x="26" y="214" fill="#e9f0f0" font-weight="600">The Operating VP</text>
+    <text x="26" y="256" fill="#e9f0f0" font-weight="600">The GTM Leader</text>
+    <text x="26" y="298" fill="#e9f0f0" font-weight="600">The Investor</text>
+    <text x="26" y="340" fill="#e9f0f0" font-weight="600">The Hiring Lead</text>
+    <text x="26" y="382" fill="#e9f0f0" font-weight="600">The Consultant</text>
+  </g>
+  <g font-size="10" font-family="ui-monospace, monospace" fill="#9ecfd0" letter-spacing="1">
+    <text x="190" y="130">FRAME</text>
+    <text x="190" y="172">EXPLORE</text>
+    <text x="190" y="214">FRAME</text>
+    <text x="190" y="256">EXPLORE</text>
+    <text x="190" y="298">FRAME</text>
+    <text x="190" y="340">RECOMMEND</text>
+    <text x="190" y="382">RECOMMEND</text>
+  </g>
+  <g font-size="11.5" font-family="ui-monospace, monospace">
+    <text x="300" y="130"><tspan fill="#9ecfd0">frame</tspan><tspan fill="#5d7374"> → </tspan><tspan fill="#9ecfd0">converge</tspan><tspan fill="#5d7374"> → </tspan><tspan fill="#9ecfd0">recommend</tspan></text>
+    <text x="300" y="172"><tspan fill="#9ecfd0">explore</tspan><tspan fill="#5d7374"> → </tspan><tspan fill="#9ecfd0">converge</tspan><tspan fill="#5d7374"> → </tspan><tspan fill="#9ecfd0">optimize</tspan></text>
+    <text x="300" y="214"><tspan fill="#9ecfd0">frame</tspan><tspan fill="#5d7374"> → </tspan><tspan fill="#9ecfd0">converge</tspan></text>
+    <text x="300" y="256"><tspan fill="#9ecfd0">explore</tspan><tspan fill="#5d7374"> → </tspan><tspan fill="#9ecfd0">converge</tspan><tspan fill="#5d7374"> → </tspan><tspan fill="#9ecfd0">optimize</tspan></text>
+    <text x="300" y="298"><tspan fill="#9ecfd0">frame</tspan><tspan fill="#5d7374"> → </tspan><tspan fill="#9ecfd0">converge</tspan></text>
+    <text x="300" y="340"><tspan fill="#9ecfd0">recommend</tspan><tspan fill="#5d7374">  (runs the whole loop for you)</tspan></text>
+    <text x="300" y="382"><tspan fill="#9ecfd0">recommend</tspan><tspan fill="#5d7374">  (agent takes the wheel)</tspan></text>
+  </g>
+
+  <!-- receipt chips: filled = done=true, outline = partial -->
+  <g font-size="11" font-family="ui-monospace, monospace">
+    <!-- founder: partial -->
+    <rect x="636" y="117" width="160" height="26" rx="13" fill="none" stroke="rgba(158,207,208,0.40)"/>
+    <text x="716" y="134" fill="#8aa3a3" text-anchor="middle">partial · r .81</text>
+    <!-- ceo: done -->
+    <rect x="636" y="159" width="160" height="26" rx="13" fill="rgba(158,207,208,0.16)" stroke="#9ecfd0"/>
+    <text x="716" y="176" fill="#9ecfd0" text-anchor="middle" font-weight="700">done = true ✓ · r 1.0</text>
+    <!-- vp: partial -->
+    <rect x="636" y="201" width="160" height="26" rx="13" fill="none" stroke="rgba(158,207,208,0.40)"/>
+    <text x="716" y="218" fill="#8aa3a3" text-anchor="middle">partial · r .16</text>
+    <!-- gtm: partial -->
+    <rect x="636" y="243" width="160" height="26" rx="13" fill="none" stroke="rgba(158,207,208,0.40)"/>
+    <text x="716" y="260" fill="#8aa3a3" text-anchor="middle">partial · r .44</text>
+    <!-- investor: partial -->
+    <rect x="636" y="285" width="160" height="26" rx="13" fill="none" stroke="rgba(158,207,208,0.40)"/>
+    <text x="716" y="302" fill="#8aa3a3" text-anchor="middle">partial · r .75</text>
+    <!-- hiring: done -->
+    <rect x="636" y="327" width="160" height="26" rx="13" fill="rgba(158,207,208,0.16)" stroke="#9ecfd0"/>
+    <text x="716" y="344" fill="#9ecfd0" text-anchor="middle" font-weight="700">done = true ✓ · r 1.0</text>
+    <!-- consultant: done -->
+    <rect x="636" y="369" width="160" height="26" rx="13" fill="rgba(158,207,208,0.16)" stroke="#9ecfd0"/>
+    <text x="716" y="386" fill="#9ecfd0" text-anchor="middle" font-weight="700">done = true ✓ · r 1.0</text>
+  </g>
+
+  <line x1="26" y1="408" x2="796" y2="408" stroke="rgba(158,207,208,0.16)" stroke-width="1"/>
+  <text x="26" y="430" fill="#7f9a9c" font-size="10.5" font-family="ui-monospace, monospace">filled = it holds (done = true) · outline = a lean plus the open question you keep · r = how tightly the seven angles agree</text>
+  <text x="26" y="446" fill="#5d7374" font-size="10.5" font-family="ui-monospace, monospace">3 lock clean, 4 come back partial — real business calls mostly carry a live trade-off. A tool that always says "done" is lying.</text>
+</svg>

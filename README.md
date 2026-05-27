@@ -122,6 +122,16 @@ That's the honest read: your folder *isn't* decided yet. Two threads cohere, two
 
 Same five words, three shapes of answer — a confident pick with one caveat, a clean *done*, and an honest *not yet* — each carrying its receipt.
 
+## Built for real decisions
+
+The same five words handle the calls that actually cost something — a fundraise, a build-vs-buy, a reorg, a re-price, a deal, a senior hire. Each maps to the person making it, the chain they run, and the receipt they get back:
+
+<p align="center">
+  <img src="docs/journeys.svg" alt="Seven business decisions mapped to who decides, where they enter, the chain they run, and the receipt each one yields" width="720">
+</p>
+
+Three lock clean; four come back **partial** — because real business calls mostly carry a live trade-off, and the tool shows the seam instead of faking a "done." Every journey is a **runnable test**, not a screenshot. The full map, the plain-English walkthrough, and how to run them yourself: **[docs/JOURNEYS.md](docs/JOURNEYS.md)**.
+
 ## The mental model — Point · Line · Lock
 
 ```

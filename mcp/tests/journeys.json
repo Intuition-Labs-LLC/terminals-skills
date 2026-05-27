@@ -1,0 +1,183 @@
+{
+  "_spdx": "AGPL-3.0-or-later",
+  "_copyright": "Copyright (c) 2026 Tej Desai / Intuition Labs LLC",
+  "_about": "Seven high-intensity business decisions, each mapped to a persona, an entry point, and the verb-chain that serves it. Coherence is the agent's honest pairwise judgment, given compactly: every pair starts at 'base'; pairs inside an 'align' group strongly agree; 'clash' pairs strongly disagree. The 'expect' is the verdict the honest matrix should produce; 'seam' (for partials) is a clashing pair that MUST surface as a loose trio so the trade-off is never hidden. test_journeys.py builds the matrix and drives the real engine.",
+  "_scale": {"base_neutral": 0.6, "align": 0.92, "clash": 0.12},
+  "journeys": [
+    {
+      "id": "founder-fundraise",
+      "persona": "The Founder",
+      "stakes": "9 months runway, two term sheets and a bridge on the table",
+      "entry": "frame",
+      "chain": ["frame", "converge", "recommend"],
+      "prompt": "I have a $4M priced seed at a $20M cap, a $2M SAFE bridge, and a strategic round from a platform partner. 9 months of runway. I want to keep control and hit Series A milestones. You decide.",
+      "ideas": [
+        "Take the $4M priced seed (~20% dilution)",
+        "Take the $2M SAFE bridge, raise A on traction",
+        "Strategic round from the platform partner",
+        "Revenue-based financing, no dilution",
+        "Cut burn 30%, extend to 18 months",
+        "Keep founder control",
+        "Hit Series A milestones in 9 months"
+      ],
+      "coherence": {
+        "base": 0.88,
+        "align": [[0, 5, 6]],
+        "clash": [[2, 5], [2, 6], [3, 6], [3, 0]]
+      },
+      "expect": "partial",
+      "seam": [2, 5],
+      "reading": "Lean priced seed: it funds the milestones and keeps control. The open question is whether the partner's distribution is worth the control you'd give up."
+    },
+    {
+      "id": "ceo-build-vs-buy",
+      "persona": "The CEO / Board",
+      "stakes": "$40M ARR, customers need usage billing now, capital discipline mandate",
+      "entry": "explore",
+      "chain": ["explore", "converge", "optimize"],
+      "prompt": "We need usage-based metering and billing. Build it, buy the category leader, or partner? Time-to-market and engineering focus matter, and the board wants capital discipline.",
+      "ideas": [
+        "Buy the category leader",
+        "Ship metering in under two quarters",
+        "Free the six engineers for the core product",
+        "Predictable vendor cost beats build risk",
+        "Integrate via their API, no lock-in clause",
+        "Board wants capital discipline this year",
+        "Customers need usage billing now"
+      ],
+      "coherence": {
+        "base": 0.9,
+        "align": [[0, 1, 2, 3, 4, 5, 6]],
+        "clash": []
+      },
+      "expect": "R=1",
+      "seam": null,
+      "reading": "Overdetermined buy: every angle (speed, focus, cost, customer pull) points the same way."
+    },
+    {
+      "id": "vp-reorg",
+      "persona": "The Operating VP",
+      "stakes": "ordered to cut 15% opex across three teams without stalling the roadmap",
+      "entry": "frame",
+      "chain": ["frame", "converge"],
+      "prompt": "I have to cut 15% of opex. Options: merge platform and infra, cut the lowest-ROI product line, offshore support. I must protect top ICs, keep delivery velocity, and watch attrition.",
+      "ideas": [
+        "Merge platform and infra teams",
+        "Cut the lowest-ROI product line",
+        "Offshore the support tier",
+        "Protect the top-quartile ICs",
+        "Hit the 15% opex cut",
+        "Keep delivery velocity on the roadmap",
+        "Attrition / morale risk"
+      ],
+      "coherence": {
+        "base": 0.55,
+        "align": [[1, 2, 4]],
+        "clash": [[3, 4], [5, 0], [5, 1], [6, 2], [6, 1]]
+      },
+      "expect": "partial",
+      "seam": [3, 4],
+      "reading": "You can hit the number, or keep velocity and morale at this depth — not both. The cut locks; protecting ICs and holding velocity are the loose trios. That trade-off is the decision, and it stays with you."
+    },
+    {
+      "id": "gtm-pricing",
+      "persona": "The GTM Leader",
+      "stakes": "re-pricing a SaaS from seats to usage while competitors have already moved",
+      "entry": "explore",
+      "chain": ["explore", "converge", "optimize"],
+      "prompt": "We're re-pricing. Pure usage, a hybrid platform-fee-plus-usage, or keep seats with a usage tier? The board wants predictable revenue, sales comp must stay simple, and competitors moved to usage.",
+      "ideas": [
+        "Pure usage-based pricing",
+        "Hybrid: platform fee plus usage",
+        "Keep seats, add a usage tier",
+        "Land low, expand on consumption",
+        "Predictable revenue for the board",
+        "Keep sales comp simple",
+        "Competitors already moved to usage"
+      ],
+      "coherence": {
+        "base": 0.62,
+        "align": [[1, 3, 4, 5], [3, 6]],
+        "clash": [[0, 4], [0, 5], [2, 6], [2, 3]]
+      },
+      "expect": "partial",
+      "seam": [0, 4],
+      "reading": "Strong lean to the hybrid: it threads predictable revenue, simple comp, and the land-and-expand motion. Pure usage stays loose against predictability; seats stay loose against the market. The hybrid is the pick; the loose trios are the alternatives you're consciously not taking."
+    },
+    {
+      "id": "investor-dataroom",
+      "persona": "The Investor",
+      "stakes": "Series B go/no-go read straight from the data room",
+      "entry": "frame",
+      "chain": ["frame", "converge"],
+      "prompt": "Diligence read on a Series B. The data room: NRR 128%, top-3 logos at 41% of ARR, Rule-of-40 at 52, founder-led sales with no VP yet, expanding TAM, 78% gross margin, burn multiple 1.4.",
+      "ideas": [
+        "NRR 128%, best-in-class retention",
+        "Top-3 logos = 41% of ARR (concentration)",
+        "Rule-of-40 at 52",
+        "Founder-led sales, no VP Sales yet",
+        "Expanding TAM, category tailwind",
+        "Gross margin 78%",
+        "Burn multiple 1.4 (efficient)"
+      ],
+      "coherence": {
+        "base": 0.86,
+        "align": [[0, 2, 5, 6], [2, 4]],
+        "clash": [[1, 0], [1, 2], [3, 4], [3, 2]]
+      },
+      "expect": "partial",
+      "seam": [3, 4],
+      "reading": "The fundamentals lock — retention, margin, efficiency, Rule-of-40 all back each other. Two risks stay loose: logo concentration against the retention story, and a missing GTM leader against the TAM you'd be underwriting. Price those or get conviction before the IC."
+    },
+    {
+      "id": "hiring-vp-eng",
+      "persona": "The Hiring Principal",
+      "stakes": "whether to extend a VP Eng offer that's over the bar and 15% over band",
+      "entry": "recommend",
+      "chain": ["recommend"],
+      "prompt": "Should we extend the VP Eng offer? She scaled eng 20 to 150 at a comparable-stage company, shipped two platform rewrites on time, references call her a low-ego mentor, the comp ask is 15% over band, we have no eng leadership layer, backchannels are strong, and she can start in four weeks.",
+      "ideas": [
+        "Scaled eng 20 to 150 at comparable stage",
+        "Shipped two platform rewrites on time",
+        "Culture-add: low-ego mentor (references)",
+        "Comp ask 15% over band, still reasonable",
+        "Closes a real eng-leadership gap",
+        "Strong backchannel references",
+        "Available now, four-week start"
+      ],
+      "coherence": {
+        "base": 0.9,
+        "align": [[0, 1, 2, 3, 4, 5, 6]],
+        "clash": []
+      },
+      "expect": "R=1",
+      "seam": null,
+      "reading": "Clean, overdetermined hire: capability, culture, gap-fit, and timing all line up. Extend the offer."
+    },
+    {
+      "id": "consultant-gtm-sequencing",
+      "persona": "The Strategy Consultant",
+      "stakes": "synthesizing client discovery into one staged market-entry recommendation",
+      "entry": "recommend",
+      "chain": ["recommend"],
+      "prompt": "Synthesize the discovery into one recommendation for the client's market-entry sequencing. You take the wheel.",
+      "ideas": [
+        "Enter the mid-market segment first",
+        "Land with the wedge product, not the suite",
+        "Partner-led distribution in year one",
+        "Defer enterprise until SOC2 and references",
+        "Price for adoption, not margin, in year one",
+        "Hire two AEs and one SE, not a full team",
+        "12-month proof-of-traction gate before scale"
+      ],
+      "coherence": {
+        "base": 0.9,
+        "align": [[0, 1, 2, 3, 4, 5, 6]],
+        "clash": []
+      },
+      "expect": "R=1",
+      "seam": null,
+      "reading": "One coherent staged motion: wedge into mid-market, partner-led, priced for adoption, gated before scale. A confident pick that optimizes to its cheapest equal form."
+    }
+  ]
+}
