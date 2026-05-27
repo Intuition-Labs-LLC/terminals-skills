@@ -45,7 +45,7 @@ def test_initialize_list_and_call_converge():
     assert by_id[1]["result"]["protocolVersion"] == "2025-06-18"
 
     names = {t["name"] for t in by_id[2]["result"]["tools"]}
-    assert names == {"explore", "converge", "optimize", "recommend", "frame"}
+    assert names == {"explore", "converge", "optimize", "recommend", "frame", "hold"}
 
     payload = json.loads(by_id[3]["result"]["content"][0]["text"])
     assert payload["witness"]["verdict"] == "R=1"
@@ -81,3 +81,23 @@ def test_tools_call_missing_name_is_invalid_params():
     out, err = _run([{"jsonrpc": "2.0", "id": 7, "method": "tools/call", "params": {}}])
     by_id = {m.get("id"): m for m in out if "id" in m}
     assert by_id[7]["error"]["code"] == -32602
+
+
+def test_hold_via_server_reports_drift():
+    # converge to a settled answer, then hold it against a degraded new state
+    ideas = [f"i{i}" for i in range(7)]
+    low = [[1.0 if i == j else 0.15 for j in range(7)] for i in range(7)]
+    init = {"jsonrpc": "2.0", "id": 1, "method": "initialize",
+            "params": {"protocolVersion": "2025-06-18", "capabilities": {},
+                       "clientInfo": {"name": "t", "version": "1"}}}
+    note = {"jsonrpc": "2.0", "method": "notifications/initialized"}
+    out, _ = _run([init, note,
+                   {"jsonrpc": "2.0", "id": 2, "method": "tools/call",
+                    "params": {"name": "converge", "arguments": {"ideas": ideas, "coherence": HIGH}}}])
+    prior = json.loads({m.get("id"): m for m in out if "id" in m}[2]["result"]["content"][0]["text"])
+    out2, _ = _run([init, note,
+                    {"jsonrpc": "2.0", "id": 3, "method": "tools/call",
+                     "params": {"name": "hold", "arguments": {"prior": prior, "ideas": ideas, "coherence": low}}}])
+    res = json.loads({m.get("id"): m for m in out2 if "id" in m}[3]["result"]["content"][0]["text"])
+    assert res["still_holds"] is False
+    assert len(res["drifted"]) > 0

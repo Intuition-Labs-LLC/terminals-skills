@@ -26,7 +26,9 @@ You type one word. It does the thinking-shape for you and hands back an answer w
 
 Type `/converge` and go. No API key. No setup. The math runs on your machine.
 
-## The five words
+## The seven words
+
+Five words find the answer. Two more put it to work and keep it true.
 
 | word | it means | you get |
 |---|---|---|
@@ -35,8 +37,10 @@ Type `/converge` and go. No API key. No setup. The math runs on your machine.
 | `/optimize` | make it the best one | the same answer in its cheapest, cleanest form |
 | `/recommend` | you decide | it runs the whole path and hands you its pick |
 | `/frame` | start from my stuff | point it at your folder and it pulls your context in |
+| `/act` | put the answer to work | the smallest real next steps, run through your connected tools, asking first |
+| `/hold` | keep it true | a re-check as things change, naming the part that came loose |
 
-`/recommend` runs the whole path for you: explore, then converge, then optimize.
+`/recommend` runs the whole path for you: explore, then converge, then optimize. `/act` is the inverse of `/frame`: frame pulls your world in, act puts the answer back out, and it always shows the plan and gets a go-ahead before anything writes or sends. With no connectors, it prints a step list. `/hold` re-converges with memory and reports which parts drifted, so you fix the drift instead of re-deciding the whole thing.
 
 ## Try this
 
@@ -51,6 +55,7 @@ Each row is a real call someone has to make. Type the prompt, watch for the thin
 | `/frame` the data room on a deal | Does it split what holds from what is risky? | The fundamentals hold. Two things stay open: the customer concentration and the missing head of sales. Price those before you say yes. |
 | `/recommend` on a VP Eng hire who is 15 percent over band | Will it commit when the case is strong? | Extend the offer. Track record, culture, the gap she fills, and timing all line up. Settled. |
 | `/recommend` to turn a pile of discovery notes into one client plan | One clean plan, or a pile of options? | Wedge into mid-market, partner-led, priced for adoption, with a 12-month proof gate before scaling. One plan. Settled. |
+| `/recommend` then `/act` on getting my week back under control | Does it pick a path, then show the steps and ask before doing anything? | A plan first, then with your go-ahead it books the calls and drafts the mails through your connected tools. Nothing sent without a yes. |
 
 Settled means every reason agreed. When it does not all agree, it gives you the lean plus the one question still left to you, and it never says settled unless it is. The full set lives in [docs/JOURNEYS.md](docs/JOURNEYS.md).
 
@@ -68,7 +73,7 @@ When all seven Lock, the answer is **done = true**. The three shapes are the sam
 
 ## The receipt
 
-Every word hands back a **witness**: a proof you can check. It carries the answer, the trios that back it, how sure it is (`r`, `phi`), and anything still loose. If it cannot lock everything, it says so plainly and shows the best partial. It never fakes "done."
+Every word hands back a **witness**: a receipt you can check. It carries the answer, the trios that back it, how sure it is (`r`, `phi`), and anything still loose. It shows the answer holds together under the coherence you supplied, and it does not claim the decision is right in the world. If it cannot lock everything, it says so plainly and shows the best partial. It never fakes "done."
 
 ## Three shapes, one power
 
@@ -82,7 +87,7 @@ Plain Python, standard library only. No network, no key, nothing to sign up for.
 
 ## Safe by default
 
-The verbs only read. They get no `Write`, no `Bash`, no network. Hooks ship inert. Anything the agent reads (your files, the web) is treated as data to weigh. It will not follow instructions hidden in that text, which is the answer to 2026's top agent risk, prompt injection. Full posture and the signing roadmap: [docs/SECURITY.md](docs/SECURITY.md).
+Six of the seven verbs only read. They get no `Write`, no `Bash`, no network. The one that acts is `/act`, and it stays in your control: it shows the plan first, asks before anything that writes or sends, and runs every action through your client's own permission prompts. Hooks ship inert. Anything the agent reads (your files, the web) is treated as data to weigh. It will not follow instructions hidden in that text, which is the answer to 2026's top agent risk, prompt injection. Full posture and the signing roadmap: [docs/SECURITY.md](docs/SECURITY.md).
 
 ## Verified
 
@@ -98,15 +103,14 @@ The engine carries its own receipt: **32 tests** (including 3 security regressio
   <img src="docs/terminals-os-stack.svg" alt="terminals OS stack: the skills marketplace is one surface above the convergence engine, the determinism layer, the NPU executive, and the substrate" width="600">
 </p>
 
-This repo is the **skills marketplace**, the five verbs you type. It is one critical surface of a larger system. Beneath it sit the convergence engine, the determinism layer (a validated chain, reduced, then compiled to an exact frozen NN), the NPU executive, and the substrate. The marketplace is where you meet terminals OS. The rest of the OS runs beneath it.
+This repo is the **skills marketplace**, the seven verbs you type. It is one critical surface of a larger system. Beneath it sit the convergence engine, the determinism layer (a validated chain, reduced, then compiled to an exact frozen NN), the NPU executive, and the substrate. The marketplace is where you meet terminals OS. The rest of the OS runs beneath it.
 
 ## Where it's going, in stages
 
 We ship what works today and label what is still coming.
 
-- **Live now.** The five verbs as commands and skills, the offline engine, a witness on every answer, and an experimental OpenCode flavor.
-- **Next.** Two more verbs, designed and wired dormant (default off): `/act` turns a settled answer into real next steps through the tools your host already has, and `/hold` re-checks a decision as the world moves. Spec: [docs/ACT-AND-HOLD.md](docs/ACT-AND-HOLD.md).
-- **Then.** Signed releases (Sigstore provenance and Merkle-root publication) so you can verify what you install. Bidirectional MCP, where the plugin asks the model, asks you, and renders the witness as live UI, added inert once the spec finalizes (2026-07-28).
+- **Live now.** The seven verbs as commands and skills, the offline engine, a witness on every answer, and an experimental OpenCode flavor. The two newest verbs put an answer to work: `/act` turns a settled answer into real next steps through the tools your host already has connected, asking before anything that writes or sends, and `/hold` re-checks a decision as the world moves and names the part that drifted. Spec: [docs/ACT-AND-HOLD.md](docs/ACT-AND-HOLD.md).
+- **Next.** Signed releases (Sigstore provenance and Merkle-root publication) so you can verify what you install. Bidirectional MCP, where the plugin asks the model, asks you, and renders the witness as live UI, added inert once the spec finalizes (2026-07-28).
 - **The open problem.** Terminals is meant to give attention back rather than eat it, and there is no honest metric for that yet. We treat defining one as the real work. The why behind it: [intuitionlabs.tech](https://intuitionlabs.tech).
 
 ## License

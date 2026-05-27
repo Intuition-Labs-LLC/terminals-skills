@@ -22,7 +22,9 @@ agree with each other. Nothing else to learn. That's the entire surface, whether
 
 When `r` reaches 1, every trio agrees. That's **R = 1**, done = true.
 
-## The five words
+## The seven words
+
+Five words find the answer. Two more put it to work and keep it true.
 
 | word | tiny meaning | what you get |
 |---|---|---|
@@ -31,6 +33,8 @@ When `r` reaches 1, every trio agrees. That's **R = 1**, done = true.
 | `/optimize` | make it the best one | same answer, the cheapest and cleanest version |
 | `/recommend` | you decide | it runs the whole path and hands you its pick + the receipt |
 | `/frame` | start from my stuff | point it at your folder; it pulls your context in and goes |
+| `/act` | put the answer to work | the smallest real next steps, run through your connected tools, asking before anything that writes or sends |
+| `/hold` | keep it true | a re-check as things change; it names the part that came loose so you fix the drift |
 
 ## The receipt (the witness)
 

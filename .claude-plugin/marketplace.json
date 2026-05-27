@@ -5,14 +5,14 @@
     "url": "https://intuitionlabs.tech"
   },
   "metadata": {
-    "description": "The Terminals convergence-verb marketplace. Right, then best, then proven.",
-    "version": "0.1.0"
+    "description": "The Terminals convergence-verb marketplace. Turn a messy idea-pile into an answer that carries its own checkable receipt.",
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "terminals",
       "source": "./",
-      "description": "Five verbs: /explore /converge /optimize /recommend /frame. Turn a messy idea-pile into an answer that carries its own receipt."
+      "description": "Seven verbs: /explore /converge /optimize /recommend /frame /act /hold. Turn a messy idea-pile into an answer that carries its own receipt, then act on it and keep it true."
     }
   ]
 }

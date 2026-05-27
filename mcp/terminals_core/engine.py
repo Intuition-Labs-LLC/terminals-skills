@@ -316,11 +316,9 @@ def frame(items, coherence=None, threshold=DEFAULT_THRESHOLD, seed=None):
 def hold(prior, ideas, coherence=None, threshold=DEFAULT_THRESHOLD, seed=None):
     """Re-check a prior settled answer against new state (converge with memory).
 
-    EXPERIMENTAL and dormant: present and tested, but intentionally NOT registered
-    in the MCP tool surface (server.py keeps the live verbs at five). It re-converges
-    on the new ideas and coherence, then diffs the result against the prior locked
-    set, reporting which trios came loose (drift) so the caller can fix the drift
-    instead of re-deciding from scratch.
+    Re-converges on the new ideas and coherence, then diffs the result against the
+    prior locked set, reporting which trios came loose (drift), which still hold, and
+    which are new, so the caller fixes the drift instead of re-deciding from scratch.
     """
     now = converge(ideas, coherence, threshold=threshold, seed=seed)
     prior_locked = {tuple(line["points"]) for line in (prior or {}).get("kept", [])}

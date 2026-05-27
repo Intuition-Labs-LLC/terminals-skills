@@ -3,8 +3,9 @@
 """Terminals MCP server: pure standard library, offline, no API key.
 
 Speaks the Model Context Protocol over stdio: newline-delimited JSON-RPC 2.0.
-Exposes five tools (explore, converge, optimize, recommend, frame). The math
-lives in this same package; this module is just the wire.
+Exposes six tools (explore, converge, optimize, recommend, frame, hold). The math
+lives in this same package; this module is just the wire. The seventh verb, act,
+is host orchestration with no math, so it ships as a command and skill only.
 """
 from __future__ import annotations
 
@@ -111,6 +112,25 @@ TOOLS = [
             "required": ["items"],
         },
     },
+    {
+        "name": "hold",
+        "description": (
+            "Re-check a settled answer against new state (converge with memory). Pass the prior "
+            "converge result plus the updated ideas and coherence. Returns which locked trios came "
+            "loose (drift), which still hold, the new ones, and the fresh verdict, so you fix the "
+            "drift instead of re-deciding from scratch."
+        ),
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "prior": {"type": "object", "description": "The earlier converge result to re-check."},
+                "ideas": {"type": "array", "items": {"type": "string"}},
+                "coherence": _NUM_MATRIX,
+                "threshold": {"type": "number"},
+            },
+            "required": ["prior", "ideas"],
+        },
+    },
 ]
 
 
@@ -125,6 +145,8 @@ def dispatch(name, args):
         return engine.recommend(args["ideas"], args.get("coherence"), args.get("threshold", engine.DEFAULT_THRESHOLD))
     if name == "frame":
         return engine.frame(args["items"], args.get("coherence"), args.get("threshold", engine.DEFAULT_THRESHOLD))
+    if name == "hold":
+        return engine.hold(args["prior"], args["ideas"], args.get("coherence"), args.get("threshold", engine.DEFAULT_THRESHOLD))
     raise ValueError(f"unknown tool: {name}")
 
 

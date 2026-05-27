@@ -64,9 +64,9 @@ def test_optimize_normalizes_short_coherence_no_indexerror():
     assert "R_held" in res  # a real result, not an IndexError
 
 
-def test_hold_detects_drift_and_stays_dormant():
+def test_hold_detects_drift_and_is_live():
     """engine.hold re-checks a prior answer against new state and reports drift.
-    It is intentionally NOT registered as a live MCP tool."""
+    hold is now a live MCP tool; act stays a command/skill (host orchestration)."""
     from terminals_core import server
 
     prior = engine.converge(IDEAS, HIGH)  # all trios locked
@@ -77,5 +77,5 @@ def test_hold_detects_drift_and_stays_dormant():
     unchanged = engine.hold(prior, IDEAS, HIGH)
     assert unchanged["still_holds"] is True
     live = {t["name"] for t in server.TOOLS}
-    assert live == {"explore", "converge", "optimize", "recommend", "frame"}
-    assert live.isdisjoint({"hold", "act"})
+    assert live == {"explore", "converge", "optimize", "recommend", "frame", "hold"}
+    assert "act" not in live  # act has no MCP tool by design

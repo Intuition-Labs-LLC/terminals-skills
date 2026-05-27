@@ -1,7 +1,7 @@
 {
   "name": "terminals",
-  "version": "0.1.0",
-  "description": "Five small verbs that turn a messy idea-pile into a right, then best, then proven answer. Convergence math (the 7-grid + the lock-in + done=true) wired to a live sure-o-meter. Ships as commands, skills, and an MCP tool.",
+  "version": "0.2.0",
+  "description": "Seven small verbs that turn a messy idea-pile into a coherent answer with a checkable receipt, then act on it and keep it true. Convergence math (the 7-grid, the lock-in, done=true) wired to a live sure-o-meter. Ships as commands, skills, and an MCP tool.",
   "author": {
     "name": "Tej Desai",
     "url": "https://intuitionlabs.tech"
