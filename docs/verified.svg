@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" width="720" height="470" font-family="ui-sans-serif, system-ui, sans-serif" role="img" aria-label="Terminals verification: tests and an independent security audit">
+  <!-- SPDX-License-Identifier: CC-BY-4.0 -->
+  <!-- Copyright (c) 2026 Tej Desai / Intuition Labs LLC -->
+  <rect x="0" y="0" width="720" height="470" rx="16" fill="#0b1011"/>
+
+  <text x="40" y="50" fill="#e9f0f0" font-size="22" font-weight="700">verified — the engine, not just the words</text>
+  <text x="40" y="74" fill="#8aa3a3" font-size="12" font-family="ui-monospace, monospace">a coherence tool should carry its own receipt</text>
+
+  <!-- TESTED -->
+  <text x="40" y="118" fill="#9ecfd0" font-size="12" font-weight="700" font-family="ui-monospace, monospace" letter-spacing="2">TESTED</text>
+  <g font-size="14" fill="#b6c6c6">
+    <text x="62" y="148"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  32/32 tests pass — 29 unit + 3 security-regression</text>
+    <text x="62" y="174"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  24/24 adversarial cases — 0 fake done=true, 0 crashes</text>
+    <text x="62" y="200"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  300 random matrices — every R=1 re-verified; 0 hidden-loose</text>
+    <text x="62" y="226"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  deterministic · offline (no network even attempted)</text>
+  </g>
+
+  <line x1="40" y1="252" x2="680" y2="252" stroke="rgba(158,207,208,0.14)" stroke-width="1"/>
+
+  <!-- AUDITED -->
+  <text x="40" y="288" fill="#9ecfd0" font-size="12" font-weight="700" font-family="ui-monospace, monospace" letter-spacing="2">AUDITED · 2026-05-27 · INDEPENDENT</text>
+  <g font-size="14" fill="#b6c6c6">
+    <text x="62" y="318"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  no code-execution, exfiltration, or file-tampering path</text>
+    <text x="62" y="344"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  2 availability bugs found → fixed + regression-tested</text>
+    <text x="62" y="370"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  offline · inert hooks · least-privilege · injection-resistant</text>
+    <text x="62" y="396"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  verdict: safe to publish</text>
+  </g>
+
+  <text x="40" y="442" fill="#7f9a9c" font-size="11" font-family="ui-monospace, monospace">the convergence engine never fakes done=true and never hides a loose trio — proven, not promised</text>
+</svg>

@@ -181,8 +181,9 @@ def main():
             continue
         try:
             msg = json.loads(line)
-        except json.JSONDecodeError:
-            sys.stderr.write("terminals: skipped a non-JSON line\n")
+        except (json.JSONDecodeError, RecursionError, ValueError):
+            # RecursionError: a deeply-nested JSON frame must not crash the server.
+            sys.stderr.write("terminals: skipped an unparseable line\n")
             sys.stderr.flush()
             continue
         if isinstance(msg, list):

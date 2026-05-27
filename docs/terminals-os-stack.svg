@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 612" width="760" height="612" font-family="ui-sans-serif, system-ui, sans-serif" role="img" aria-label="terminals OS stack: the skills marketplace is one surface of a larger operating system">
+  <!-- SPDX-License-Identifier: CC-BY-4.0 -->
+  <!-- Copyright (c) 2026 Tej Desai / Intuition Labs LLC -->
+  <rect x="0" y="0" width="760" height="612" rx="16" fill="#0b1011"/>
+
+  <text x="380" y="46" text-anchor="middle" fill="#e9f0f0" font-size="26" font-weight="700" letter-spacing="-0.5">terminals OS</text>
+  <text x="380" y="70" text-anchor="middle" fill="#8aa3a3" font-size="12" font-family="ui-monospace, monospace" letter-spacing="1.5">AN AGENTIC OPERATING SYSTEM</text>
+
+  <!-- layer bands: x 90..600 (w 510), h 58, gap 16, start y 100 -->
+  <!-- 1 entry -->
+  <g>
+    <rect x="90" y="100" width="510" height="58" rx="9" fill="rgba(255,255,255,0.02)" stroke="rgba(158,207,208,0.18)" stroke-width="1"/>
+    <text x="112" y="127" fill="#b6c6c6" font-size="15" font-weight="600">the entry</text>
+    <text x="112" y="146" fill="#7f9a9c" font-size="11" font-family="ui-monospace, monospace">you · Claude Code · OpenCode · any MCP client</text>
+  </g>
+
+  <!-- 2 skills marketplace — HIGHLIGHT (this repo) -->
+  <g>
+    <rect x="86" y="170" width="518" height="62" rx="10" fill="#9ecfd0" opacity="0.06"/>
+    <rect x="86" y="170" width="518" height="62" rx="10" fill="rgba(158,207,208,0.10)" stroke="#9ecfd0" stroke-width="2"/>
+    <text x="110" y="198" fill="#e9f0f0" font-size="16" font-weight="700">skills marketplace</text>
+    <text x="110" y="218" fill="#9ecfd0" font-size="11" font-family="ui-monospace, monospace">explore · converge · optimize · recommend · frame</text>
+    <text x="592" y="190" text-anchor="end" fill="#9ecfd0" font-size="10" font-family="ui-monospace, monospace" font-weight="700">◆ THIS REPO</text>
+    <text x="592" y="206" text-anchor="end" fill="#7f9a9c" font-size="9" font-family="ui-monospace, monospace">terminals-skills</text>
+  </g>
+
+  <!-- 3 convergence engine -->
+  <g>
+    <rect x="90" y="244" width="510" height="58" rx="9" fill="rgba(255,255,255,0.02)" stroke="rgba(158,207,208,0.18)" stroke-width="1"/>
+    <text x="112" y="271" fill="#b6c6c6" font-size="15" font-weight="600">convergence engine</text>
+    <text x="112" y="290" fill="#7f9a9c" font-size="11" font-family="ui-monospace, monospace">the 7-grid · the lock-in · R=1 / done=true · φ (the sure-o-meter)</text>
+  </g>
+
+  <!-- 4 determinism -->
+  <g>
+    <rect x="90" y="318" width="510" height="58" rx="9" fill="rgba(255,255,255,0.02)" stroke="rgba(158,207,208,0.18)" stroke-width="1"/>
+    <text x="112" y="345" fill="#b6c6c6" font-size="15" font-weight="600">determinism layer</text>
+    <text x="112" y="364" fill="#7f9a9c" font-size="11" font-family="ui-monospace, monospace">validated chain → reduce → Bates-compile → exact frozen NN</text>
+  </g>
+
+  <!-- 5 NPU executive -->
+  <g>
+    <rect x="90" y="392" width="510" height="58" rx="9" fill="rgba(255,255,255,0.02)" stroke="rgba(158,207,208,0.18)" stroke-width="1"/>
+    <text x="112" y="419" fill="#b6c6c6" font-size="15" font-weight="600">NPU executive</text>
+    <text x="112" y="438" fill="#7f9a9c" font-size="11" font-family="ui-monospace, monospace">controller · router · the reduced basis + index</text>
+  </g>
+
+  <!-- 6 substrate -->
+  <g>
+    <rect x="90" y="466" width="510" height="58" rx="9" fill="rgba(255,255,255,0.02)" stroke="rgba(158,207,208,0.18)" stroke-width="1"/>
+    <text x="112" y="493" fill="#b6c6c6" font-size="15" font-weight="600">substrate</text>
+    <text x="112" y="512" fill="#7f9a9c" font-size="11" font-family="ui-monospace, monospace">Strix Halo · 128 GB unified memory · llama.cpp on Vulkan</text>
+  </g>
+
+  <!-- brace: the larger OS (layers 3-6) -->
+  <path d="M 618 244 q 10 0 10 12 v 122 q 0 12 10 12 q -10 0 -10 12 v 122 q 0 12 -10 12" fill="none" stroke="rgba(158,207,208,0.28)" stroke-width="1.4"/>
+  <text x="648" y="392" fill="#8aa3a3" font-size="11" font-family="ui-monospace, monospace" transform="rotate(90 648 392)" text-anchor="middle">the larger OS · the other surfaces</text>
+
+  <text x="380" y="566" text-anchor="middle" fill="#9ecfd0" font-size="13" font-weight="600">the skills marketplace is one critical surface — not the whole OS</text>
+  <text x="380" y="588" text-anchor="middle" fill="#7f9a9c" font-size="11" font-family="ui-monospace, monospace">where you meet terminals OS · the rest of the system runs beneath it</text>
+</svg>

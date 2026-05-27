@@ -23,6 +23,8 @@ from .phi import phi_from_phases
 from .steiner import coverage_report
 
 DEFAULT_THRESHOLD = 0.85
+MAX_OPTIMIZE_STEPS = 2000   # clamp caller-supplied max_steps (single-stdio DoS guard)
+MAX_INTEGRATE_STEPS = 2000  # clamp caller-supplied integration steps
 
 
 def _seed(*parts):
@@ -99,12 +101,27 @@ def _label_line(points, k):
     return {"line": k, "points": list(ln), "ideas": [points[p] for p in ln]}
 
 
+def _clean_threshold(t):
+    """Coerce a caller-supplied threshold to a finite fraction in [0.01, 1.0].
+
+    Guards the result object (and the math) against NaN/Infinity/out-of-range
+    threshold values reaching the witness or json.dumps.
+    """
+    try:
+        t = float(t)
+    except (TypeError, ValueError):
+        return DEFAULT_THRESHOLD
+    return min(1.0, max(0.01, t)) if math.isfinite(t) else DEFAULT_THRESHOLD
+
+
 def converge(ideas, coherence=None, threshold=DEFAULT_THRESHOLD, *, steps=220, dt=0.05, seed=None):
     """Bring a messy set of ideas together into one right answer with a receipt.
 
     Returns the engine-contract object: points, lines, order_parameter, R, phi,
     kept (locked trios in lock order), witness, phi_trace, and the coherence used.
     """
+    threshold = _clean_threshold(threshold)
+    steps = max(1, min(int(steps), MAX_INTEGRATE_STEPS))
     points, n_real, compression = _to_points(ideas)
     coherence_provided = coherence is not None and _is_matrix(coherence)
     c = _normalize_coherence(coherence) if coherence_provided else _default_coherence(n_real)
@@ -213,6 +230,9 @@ def optimize(converged, cost_fn="hamiltonian", max_steps=200, threshold=None, se
     form without breaking done=true."""
     if threshold is None:
         threshold = converged.get("threshold", DEFAULT_THRESHOLD)
+    threshold = _clean_threshold(threshold)
+    max_steps = max(1, min(int(max_steps), MAX_OPTIMIZE_STEPS))
+    steps = max(1, min(int(steps), MAX_INTEGRATE_STEPS))
     points = list(converged["points"])
     coherence = converged.get("coherence")
     was_done = converged.get("witness", {}).get("verdict") == "R=1"

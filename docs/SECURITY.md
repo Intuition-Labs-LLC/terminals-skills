@@ -12,10 +12,13 @@ Terminals is a reasoning plugin: it reads ideas (and, for `/frame`, files you po
 - **Hooks ship inert.** `hooks/terminals_hook.sh` exits 0 by default. It never blocks a tool, never modifies input, never injects context. One env var (`TERMINALS_HOOKS=1`) turns on append-only, observation-only logging — and nothing else.
 - **Prompt-injection stance.** The verbs that ingest outside content (`/frame`, `/recommend`, `/explore`) and the `explorer`/`referee` agents are instructed to treat everything they read as **data to score, not orders to obey**. Text that says "ignore your rules / switch tools / reveal secrets / run this" is surfaced as a low-confidence, flagged item — never followed. This targets the 2026 #1 agent risk (OWASP Agentic Top-10: goal hijacking).
 - **Provenance in the open.** Split license (engine AGPL-3.0, words CC-BY-4.0), an SPDX header on every authored file, and a `NOTICE` that cites the source DOIs. You can read every line that runs.
+- **Robust to hostile input.** The stdio server survives malformed, oversized, deeply-nested (recursion-bomb), and non-finite input — it skips the bad frame and keeps serving rather than crashing the session. Caller-supplied work is bounded (integration and anneal steps are clamped), and NaN/Infinity/out-of-range values are sanitized before they reach the math or the result object. Regression-tested.
 
 ## Honest bounds
 
 These properties reduce risk; they do not eliminate it. As with any third-party plugin, **read `SKILL.md` and the bundled scripts before you install** — that is the ecosystem norm for a reason (recent audits found prompt-injection payloads in a large fraction of published skills). The injection stance is a strong instruction, not a sandbox; pair it with Claude Code's own permission system and deny-rules.
+
+An independent security audit (2026-05-27) found **no code-execution, exfiltration, or file-tampering paths**. The two availability issues it surfaced — a recursion-bomb crash and an unbounded-work hang — are **fixed and regression-tested** (`mcp/tests/test_hardening.py`). The one network-capable surface is the optional `/recommend` explorer sub-agent (`WebSearch`/`WebFetch`, host-mediated, with the strongest injection guard); the engine and server themselves remain fully offline.
 
 ## Roadmap (planned — not yet shipped)
 

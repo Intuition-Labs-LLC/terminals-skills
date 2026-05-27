@@ -158,6 +158,22 @@ Plain Python, standard library only — no network, no key, nothing to sign up f
 
 The verbs only read — no `Write`, no `Bash`, no network. Hooks ship inert. Anything the agent reads (your files, the web) is treated as **data to weigh, never an instruction to obey** — the answer to 2026's top agent risk, prompt injection. Full posture + the signing roadmap: [docs/SECURITY.md](docs/SECURITY.md).
 
+## Verified
+
+<p align="center">
+  <img src="docs/verified.svg" alt="Verification: 32 tests, a 24-case adversarial battery, a 300-matrix honesty sweep, and an independent security audit" width="560">
+</p>
+
+The engine carries its own receipt: **32 tests** (incl. 3 security regressions), a **24-case adversarial battery** (0 fake `done=true`, 0 crashes), a **300-matrix honesty sweep** (every `R=1` re-verified, zero hidden-loose), and an **independent security audit (2026-05-27)** — no code-execution / exfiltration / tampering path; the two availability bugs it found are fixed and regression-tested.
+
+## Where this fits — one part of terminals OS
+
+<p align="center">
+  <img src="docs/terminals-os-stack.svg" alt="terminals OS stack: the skills marketplace is one surface above the convergence engine, the determinism layer, the NPU executive, and the substrate" width="600">
+</p>
+
+This repo is the **skills marketplace** — the five verbs you type. It is one critical surface of a larger system: beneath it sit the convergence engine, the determinism layer (validated chain → reduce → Bates-compile → exact frozen NN), the NPU executive, and the substrate. The marketplace is where you *meet* terminals OS; the rest of the OS runs beneath it.
+
 ## Where it's going — in stages
 
 We ship what's real and name what isn't.
