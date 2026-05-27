@@ -8,6 +8,11 @@ This work is dual-licensed:
       AGPL-3.0-or-later  (see LICENSE)
 Every authored source file carries an SPDX-License-Identifier header naming which applies.
 
+A commercial license that lifts the AGPL network-copyleft obligation is available
+from Intuition Labs LLC — see COMMERCIAL-LICENSE.md. Contributions are accepted
+under the Contributor License Agreement (CLA.md), which is what lets the project
+offer both the open and the commercial lanes.
+
 ------------------------------------------------------------------------------
 Built on the author's published work — the "Terminals OS paradigm":
   - Interactive Research Environments .................. doi:10.5281/zenodo.18906942

@@ -169,3 +169,5 @@ We ship what's real and name what isn't.
 ## License
 
 Split, on purpose: the words and docs are **CC BY 4.0**; the engine is **AGPL-3.0**. SPDX on every file. Built on the published "Terminals OS paradigm" by Tej Desai / Intuition Labs — the 7-grid, the lock-in, done=true. DOIs in [NOTICE](NOTICE).
+
+Free under AGPL for everyone. If you need to embed the engine in a closed or hosted product without the AGPL source-disclosure obligation, a **commercial license** is available — see [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md). Contributions are accepted under the [CLA](CLA.md).
