@@ -38,7 +38,7 @@ terminals is not just for code. It is for the call you make when the stakes are 
 These are the engine's real numbers, reproduced on every test run. Below, each one in plain words.
 
 ### 1 · The Founder — the fundraise → **partial** (r .81)
-Priced seed, a SAFE bridge, a strategic round, RBF, or cut burn — under "keep control, hit the A." Four of seven trios lock toward the **priced seed**: it funds the milestones and keeps control. What stays loose is the **strategic round** — partner distribution against the control you'd give up. The tool hands you the lean and leaves that one call where it belongs: with you.
+Priced seed, a SAFE bridge, a strategic round, revenue-based financing, or cut burn — under "keep control, hit the A." Four of seven trios lock around the paths that keep control and fund the milestones: the **bridge** and the **priced round**. Every loose trio runs through one idea — **revenue-based financing** — so it's the misfit, out. The live call the tool hands back: bridge vs priced, and whether the strategic partner's distribution is worth the control.
 
 ### 2 · The CEO / Board — build-vs-buy → **done = true** (r 1.0)
 Usage metering needed now, capital discipline on, six engineers better spent on the core. Every angle — speed, focus, cost, customer pull — points the same way. All seven trios lock: **buy the category leader**, integrate by API. An overdetermined call, and the receipt says so.
@@ -47,7 +47,7 @@ Usage metering needed now, capital discipline on, six engineers better spent on 
 Cut 15% of opex without stalling the roadmap or losing the top ICs. Only the cut itself locks. Protecting ICs, holding velocity, and morale all stay loose — because they genuinely fight the number at this depth. This is the honest one: the tool will **not** pretend a trilemma is solved. You can hit the number, or hold velocity and morale — not both here. That trade-off *is* the decision.
 
 ### 4 · The GTM Leader — the re-price → **partial** (r .44)
-Pure usage, hybrid, or seats-plus-a-tier, under predictable-revenue + simple-comp + a market that already moved. The **hybrid** leads — it threads predictability, comp, and the land-and-expand motion (two trios lock there). Pure usage stays loose against predictability; seats stay loose against the market. The pick is clear; the loose trios are the alternatives you're consciously not taking.
+Pure usage, hybrid, or seats-plus-a-tier, under predictable-revenue + simple-comp + a market that already moved. Two trios lock: the **hybrid** with simple comp and the market move, and land-and-expand with predictable revenue and the market. Pure usage stays loose against predictability; seats stay loose against the market. The hybrid is the pick; the loose trios are the alternatives you're consciously not taking.
 
 ### 5 · The Investor — the data room → **partial** (r .75)
 NRR 128%, Rule-of-40 at 52, 78% margin, burn 1.4 — and two flags: logo concentration at 41%, founder-led sales with no VP yet. The fundamentals lock; the two risks stay loose. That's the read a good partner writes: thesis holds **except** concentration and the missing GTM leader — price those or get conviction before the IC. `/frame` reads the room and surfaces exactly the two things to underwrite.

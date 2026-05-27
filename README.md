@@ -57,80 +57,79 @@ Type `/converge` and go. No API key. No setup. The math runs on your machine.
 | `/recommend` | you decide | it runs the whole path and hands you its pick |
 | `/frame` | start from my stuff | point it at your folder; it pulls your context in |
 
-## A real run
+## Real runs — the calls people actually make
 
-You type:
+Every card below is the **real output of the engine** on a real business decision — the same numbers the test suite reproduces on every run. Not a mockup. Run them yourself from [docs/JOURNEYS.md](docs/JOURNEYS.md).
+
+**The founder — which way to raise.** You type:
 
 ```
-/recommend Two offers. A: $185k senior IC at a 2,000-person public co — strong team,
-30-min commute, stable. B: $150k + 0.4% equity at a 25-person seed startup — mission I
-care about, fully remote, higher risk. I'm 31, want to grow into leadership. You decide.
+/recommend  $4M priced seed at a $20M cap, a $2M SAFE bridge, or a strategic
+            round from a platform partner. 9 months runway. Keep control,
+            hit the Series A. You decide.
 ```
-
-It opens the question into seven angles, judges how they fit, locks the ones that agree, and hands back the call **with the receipt**. These are the engine's real numbers:
 
 ```
 ╭─ terminals · recommend ─────────────────────────────────╮
-│ pick    →  take the startup (offer B)                   │
-│ why     →  growth, mission & remote pull one way        │
+│ pick    →  raise now — the bridge or the priced round   │
+│ why     →  both keep control and fund the Series A      │
 │                                                         │
-│ locked  ▸ growth + mission + remote                     │
-│         ▸ growth + optionality + team                   │
-│         ▸ leadership + remote + team                    │
-│         ▸ mission + leadership + optionality            │
-│ loose   ▸ every loose trio is the same thing —          │
-│           “is the equity worth it?”  ·  your call       │
+│ locked  ▸ bridge + keep control + hit the A             │
+│         ▸ priced seed + cut burn + keep control         │
+│         ▸ priced seed + strategic round + milestones    │
+│ loose   ▸ every loose thread runs through revenue-based │
+│           financing — it fights keep-control, hit-the-A │
 │                                                         │
-│ r 0.71   ·   phi 0.83   ·   partial — 4 of 7 locked     │
+│ r 0.81   ·   phi 0.62   ·   partial — 4 of 7 locked     │
 ╰─────────────────────────────────────────────────────────╯
 ```
 
-Four of seven trios lock — the case for B holds. The three that *don't* are all one thing: whether the equity is actually worth it. The math won't pretend to know that, so it hands that part back to you. **That's the difference — an answer that shows its own seams.**
+Four of seven lock. The pick: raise via the bridge or the priced round — both keep control. Every loose thread runs through one thing, revenue-based financing, so that's out, and bridge-vs-priced is the call it hands back to **you**. An answer that shows its own seams.
 
-## More real runs
-
-**`/converge` — when it all actually fits.** Ask whether an argument holds; if every claim backs the next, you get **done = true** — not a maybe:
+**The CEO — build it or buy it.** Metering needed now, six engineers better spent on the core, capital discipline on:
 
 ```
-╭─ terminals · converge ──────────────────────────────────╮
-│ answer  →  the case for a 4-day week holds              │
-│                                                         │
-│ locked  ▸ all 7 trios — every claim backs the next      │
-│           e.g. focus + cost-neutral + fewer meetings    │
-│                                                         │
-│ r 1.00   ·   phi 1.00   ·   done = true ✓               │
-╰─────────────────────────────────────────────────────────╯
+╭─ terminals · converge ───────────────────────────────────────╮
+│ answer  →  buy the category leader                           │
+│ why     →  speed, focus, cost & customer pull agree          │
+│                                                              │
+│ locked  ▸ all 7 trios — every angle points one way           │
+│         ▸ ship in 2 quarters + free the engineers + API      │
+│         ▸ free the engineers + predictable cost + discipline │
+│                                                              │
+│ r 1.00   ·   phi 1.00   ·   done = true ✓                    │
+╰──────────────────────────────────────────────────────────────╯
 ```
 
-**`/frame` — start from your own folder.** Point it at a pile of notes; it reads them, lays them on the grid, and tells you what coheres and what's still open:
+Every angle agrees — a clean **done = true**.
+
+**The investor — read the data room.** Point `/frame` at the diligence file; it lays the seven lines on the grid and tells you what holds:
 
 ```
-╭─ terminals · frame ─────────────────────────────────────╮
-│ read    ▸ 7 notes from your folder → the 7-grid         │
-│ answer  →  not settled yet — leans remote, not done     │
-│                                                         │
-│ locked  ▸ flexibility + lease savings + hiring          │
-│         ▸ productivity + flexibility + async            │
-│ open    ▸ two threads still pull against it:            │
-│           onboarding  ·  roles needing in-person        │
-│                                                         │
-│ r 0.43   ·   phi 0.76   ·   partial — 2 of 7 locked     │
-╰─────────────────────────────────────────────────────────╯
+╭─ terminals · frame ───────────────────────────────────────╮
+│ read    ▸ 7 lines from the data room → the grid           │
+│ answer  →  thesis holds on fundamentals; two risks open   │
+│                                                           │
+│ locked  ▸ NRR 128% + Rule-of-40 + efficient burn          │
+│         ▸ NRR + expanding TAM + 78% margin                │
+│ loose   ▸ logo concentration (41%) vs the retention story │
+│         ▸ no VP Sales yet vs the TAM you would underwrite │
+│                                                           │
+│ r 0.75   ·   phi 0.41   ·   partial — 3 of 7 locked       │
+╰───────────────────────────────────────────────────────────╯
 ```
 
-That's the honest read: your folder *isn't* decided yet. Two threads cohere, two still pull against them — so it hands you the map instead of a fake verdict.
+The fundamentals lock; two risks stay open — logo concentration and a missing VP Sales — so it hands you exactly what to price before the IC.
 
-Same five words, three shapes of answer — a confident pick with one caveat, a clean *done*, and an honest *not yet* — each carrying its receipt.
+## All seven journeys
 
-## Built for real decisions
-
-The same five words handle the calls that actually cost something — a fundraise, a build-vs-buy, a reorg, a re-price, a deal, a senior hire. Each maps to the person making it, the chain they run, and the receipt they get back:
+Founder, CEO, VP, GTM lead, investor, hiring lead, consultant — who decides, where they jump in, the chain they run, and the receipt each one gets back:
 
 <p align="center">
   <img src="docs/journeys.svg" alt="Seven business decisions mapped to who decides, where they enter, the chain they run, and the receipt each one yields" width="720">
 </p>
 
-Three lock clean; four come back **partial** — because real business calls mostly carry a live trade-off, and the tool shows the seam instead of faking a "done." Every journey is a **runnable test**, not a screenshot. The full map, the plain-English walkthrough, and how to run them yourself: **[docs/JOURNEYS.md](docs/JOURNEYS.md)**.
+Three lock clean; four come back **partial** — real business calls mostly carry a live trade-off, and the tool shows the seam instead of faking a "done." Every journey is a **runnable test**, not a screenshot. The full walkthrough and how to run them yourself: **[docs/JOURNEYS.md](docs/JOURNEYS.md)**.
 
 ## The mental model — Point · Line · Lock
 
