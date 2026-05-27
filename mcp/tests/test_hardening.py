@@ -79,3 +79,13 @@ def test_hold_detects_drift_and_is_live():
     live = {t["name"] for t in server.TOOLS}
     assert live == {"explore", "converge", "optimize", "recommend", "frame", "hold"}
     assert "act" not in live  # act has no MCP tool by design
+
+
+def test_hold_tolerates_hostile_prior():
+    """The `prior` argument is the one hold() input not run through the hardened
+    converge path. A malformed or hostile prior must not raise; it is treated as
+    having no locked trios."""
+    for p in [None, "x", 5, [1], {"kept": "x"}, {"kept": [{"points": None}]},
+              {"kept": [{"nope": 1}]}, {"kept": [{"points": [[1]]}]}]:
+        out = engine.hold(p, IDEAS, HIGH)
+        assert "drifted" in out and "still_holds" in out

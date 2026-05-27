@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Copyright (c) 2026 Tej Desai / Intuition Labs LLC
-"""The five verbs: done=true on coherent input, partial on incoherent, the
+"""The core verbs: done=true on coherent input, partial on incoherent, the
 witness rides along, optimize holds done=true, and everything is deterministic."""
 from terminals_core import engine
 

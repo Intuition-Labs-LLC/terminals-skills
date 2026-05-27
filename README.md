@@ -33,7 +33,7 @@ Five words find the answer. Two more put it to work and keep it true.
 | word | it means | you get |
 |---|---|---|
 | `/explore` | open it up | every angle, spread out on purpose |
-| `/converge` | bring it together | one right answer, plus the receipt |
+| `/converge` | bring it together | one coherent answer, plus the receipt |
 | `/optimize` | make it the best one | the same answer in its cheapest, cleanest form |
 | `/recommend` | you decide | it runs the whole path and hands you its pick |
 | `/frame` | start from my stuff | point it at your folder and it pulls your context in |
@@ -92,10 +92,10 @@ Six of the seven verbs only read. They get no `Write`, no `Bash`, no network. Th
 ## Verified
 
 <p align="center">
-  <img src="docs/verified.svg" alt="Verification: 32 tests, a 24-case adversarial battery, a 300-matrix honesty sweep, and an independent security audit" width="560">
+  <img src="docs/verified.svg" alt="Verification: 80 tests, a 24-case adversarial battery, a 300-matrix honesty sweep, and an independent security audit" width="560">
 </p>
 
-The engine carries its own receipt: **32 tests** (including 3 security regressions), a **24-case adversarial battery** (0 fake `done=true`, 0 crashes), a **300-matrix honesty sweep** (every `R=1` re-verified, zero hidden-loose), and an **independent security audit (2026-05-27)** with no code-execution, exfiltration, or tampering path. The two availability bugs it found are fixed and regression-tested.
+The engine carries its own receipt: **80 tests** (the unit, protocol, journey, and security-regression suites), a **24-case adversarial battery** (0 fake `done=true`, 0 crashes), a **300-matrix honesty sweep** (every `R=1` re-verified, zero hidden-loose), and an **independent security audit (2026-05-27)** with no code-execution, exfiltration, or tampering path. The two availability bugs it found are fixed and regression-tested.
 
 ## Where this fits: one part of terminals OS
 

@@ -9,7 +9,7 @@
   <!-- TESTED -->
   <text x="40" y="118" fill="#9ecfd0" font-size="12" font-weight="700" font-family="ui-monospace, monospace" letter-spacing="2">TESTED</text>
   <g font-size="14" fill="#b6c6c6">
-    <text x="62" y="148"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  32/32 tests pass (29 unit, 3 security-regression)</text>
+    <text x="62" y="148"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  80/80 tests pass (unit, protocol, journeys, hardening)</text>
     <text x="62" y="174"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  24/24 adversarial cases. 0 fake done=true, 0 crashes</text>
     <text x="62" y="200"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  300 random matrices. every R=1 re-verified, 0 hidden-loose</text>
     <text x="62" y="226"><tspan fill="#9ecfd0" font-weight="700">✓</tspan>  deterministic · offline (no network even attempted)</text>

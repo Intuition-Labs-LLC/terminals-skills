@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Copyright (c) 2026 Tej Desai / Intuition Labs LLC
-"""The five verbs as one organism.
+"""The convergence verbs as one organism.
 
 `converge` is the core: lay ideas on the 7-grid, run the lock-in, read done=true,
 return the answer plus the receipt (the witness). `explore`, `optimize`,
@@ -313,6 +313,21 @@ def frame(items, coherence=None, threshold=DEFAULT_THRESHOLD, seed=None):
     return {"framing": framing, **conv}
 
 
+def _prior_locked(prior):
+    """Safely pull the locked-trio set from a prior result, tolerating any hostile
+    or malformed `prior`. It is the one hold() input that does not pass through the
+    hardened converge path, so it is parsed defensively here."""
+    locked = set()
+    if isinstance(prior, dict):
+        for line in prior.get("kept", []) or []:
+            if isinstance(line, dict) and isinstance(line.get("points"), (list, tuple)):
+                try:
+                    locked.add(tuple(line["points"]))
+                except TypeError:
+                    pass
+    return locked
+
+
 def hold(prior, ideas, coherence=None, threshold=DEFAULT_THRESHOLD, seed=None):
     """Re-check a prior settled answer against new state (converge with memory).
 
@@ -321,7 +336,7 @@ def hold(prior, ideas, coherence=None, threshold=DEFAULT_THRESHOLD, seed=None):
     which are new, so the caller fixes the drift instead of re-deciding from scratch.
     """
     now = converge(ideas, coherence, threshold=threshold, seed=seed)
-    prior_locked = {tuple(line["points"]) for line in (prior or {}).get("kept", [])}
+    prior_locked = _prior_locked(prior)
     now_locked = {tuple(line["points"]) for line in now["kept"]}
     drifted = sorted(prior_locked - now_locked)
     new_locks = sorted(now_locked - prior_locked)
