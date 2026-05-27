@@ -11,6 +11,12 @@
 
 You type one word. It does the thinking-shape for you and hands back an answer **with a receipt** that shows it holds together.
 
+<p align="center">
+  <img src="docs/convergence.gif" alt="A real /converge run: seven ideas start scattered and lock into one answer at R=1" width="440">
+  <br>
+  <sub><i>A real <code>/converge</code> run — seven ideas lock into one answer (done = true / R = 1). The agree-meter <code>r</code> and sure-o-meter <code>φ</code> are the engine's own numbers, rendered from the live Kuramoto dynamics — not a mockup. (<a href="scripts/gen_convergence.py">generator</a>)</i></sub>
+</p>
+
 ```
    a mess            on the 7-grid       they lock in          done
 
@@ -132,6 +138,8 @@ Same five words, three shapes of answer — a confident pick with one caveat, a 
 
 When all seven Lock, the answer is **done = true**. Same three whether *you* type the word or the *agent* reaches for it. That's the entire surface — nothing else to learn.
 
+The whole thing in small words, including the plain-English glossary: [docs/CONCEPTS.md](docs/CONCEPTS.md).
+
 ## The receipt
 
 Every word hands back a **witness** — a proof you can check, not just a prompt: the answer, the trios that back it, how sure it is (`r`, `phi`), and what (if anything) is still loose. If it can't lock everything, it says so plainly and shows the best partial. It never fakes "done."
@@ -145,6 +153,18 @@ Every word hands back a **witness** — a proof you can check, not just a prompt
 ## Offline by default
 
 Plain Python, standard library only — no network, no key, nothing to sign up for. Want to see and cap what the agent spends (especially `/recommend`)? Run it behind Logfire Gateway — opt-in, keys never touch disk: see [docs/OBSERVE.md](docs/OBSERVE.md).
+
+## Safe by default
+
+The verbs only read — no `Write`, no `Bash`, no network. Hooks ship inert. Anything the agent reads (your files, the web) is treated as **data to weigh, never an instruction to obey** — the answer to 2026's top agent risk, prompt injection. Full posture + the signing roadmap: [docs/SECURITY.md](docs/SECURITY.md).
+
+## Where it's going — in stages
+
+We ship what's real and name what isn't.
+
+- **Live now** — the five verbs as commands + skills, the offline engine, a witness on every answer, an experimental OpenCode flavor.
+- **Next** — signed releases (Sigstore provenance + Merkle-root publication) so you can verify what you install; bidirectional MCP — the plugin asks the model, asks *you*, and renders the witness as live UI — added inert once the spec finalizes (2026-07-28).
+- **The open problem** — terminals is meant to *return* attention, not eat it, and there is no honest metric for that yet. We treat defining one as the real work, not a tagline. The why behind it: [intuitionlabs.tech](https://intuitionlabs.tech).
 
 ## License
 
