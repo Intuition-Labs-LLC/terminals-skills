@@ -1,10 +1,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Copyright (c) 2026 Tej Desai / Intuition Labs LLC
-"""Render docs/convergence.gif — the real Kuramoto lock-in on the Fano 7-grid.
+"""Render docs/convergence.gif: the real Kuramoto lock-in on the Fano 7-grid.
 
 The dynamics and the read-outs are the engine's own (`terminals_core`): the
 order parameter r, the per-trio agreement, and phi = 1 - H/log N. Nothing here is
-scripted — the trios light up teal exactly when their phases actually lock, and
+scripted: the trios light up teal exactly when their phases actually lock, and
 the gif ends on done = true because the system reached R = 1.
 
 Run:  python3 scripts/gen_convergence.py

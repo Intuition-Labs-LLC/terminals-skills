@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 <!-- Copyright (c) 2026 Tej Desai / Intuition Labs LLC -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Terminals — Intuition Labs. The answer, and the proof it holds.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Terminals, Intuition Labs. The answer, and the proof it holds.">
   <defs>
     <radialGradient id="halo" cx="50%" cy="30%" r="55%">
       <stop offset="0" stop-color="#9ecfd0" stop-opacity="0.10"/>
@@ -40,6 +40,6 @@
     <text x="600" y="408" font-size="76" font-weight="700" fill="#9ecfd0" letter-spacing="2">terminals</text>
     <line x1="500" y1="446" x2="700" y2="446" stroke="#6b7177" stroke-width="1"/>
     <text x="600" y="498" font-size="26" fill="#e7e3da">the answer, and the proof it holds</text>
-    <text x="600" y="556" font-size="18" fill="#6b7177" letter-spacing="3">intuition labs · coherence, not scale</text>
+    <text x="600" y="556" font-size="18" fill="#6b7177" letter-spacing="3">intuition labs · coherence over scale</text>
   </g>
 </svg>

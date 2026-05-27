@@ -1,4 +1,4 @@
-Terminals — the convergence-verb marketplace
+Terminals: the convergence-verb marketplace
 Copyright (c) 2026 Tej Desai / Intuition Labs LLC
 
 This work is dual-licensed:
@@ -9,12 +9,12 @@ This work is dual-licensed:
 Every authored source file carries an SPDX-License-Identifier header naming which applies.
 
 A commercial license that lifts the AGPL network-copyleft obligation is available
-from Intuition Labs LLC — see COMMERCIAL-LICENSE.md. Contributions are accepted
+from Intuition Labs LLC. See COMMERCIAL-LICENSE.md. Contributions are accepted
 under the Contributor License Agreement (CLA.md), which is what lets the project
 offer both the open and the commercial lanes.
 
 ------------------------------------------------------------------------------
-Built on the author's published work — the "Terminals OS paradigm":
+Built on the author's published work, the "Terminals OS paradigm":
   - Interactive Research Environments .................. doi:10.5281/zenodo.18906942
   - Semantic Realizability: the Convergence-Realizability Identity
                                                          doi:10.5281/zenodo.18992031
@@ -25,10 +25,10 @@ Reference code: https://github.com/wheattoast11/observable-computation
 
 ------------------------------------------------------------------------------
 Math concepts referenced (public-domain mathematics, no third-party code bundled):
-  - Fano plane / Steiner triple system S(2,3,7) — finite projective geometry.
-  - Kuramoto model of coupled phase oscillators — Y. Kuramoto.
-  - Interaction combinators — Y. Lafont, 1997.
-  - Curry–Howard correspondence / realizability — the "witness" idea.
+  - Fano plane / Steiner triple system S(2,3,7), finite projective geometry.
+  - Kuramoto model of coupled phase oscillators, Y. Kuramoto.
+  - Interaction combinators, Y. Lafont, 1997.
+  - Curry-Howard correspondence / realizability, the "witness" idea.
 
 The engine depends only on the Python standard library. No network and no API key
 are used for the core convergence math.

@@ -3,7 +3,7 @@
 
 # Terminals in OpenCode (experimental)
 
-The engine is standard MCP, so it works in OpenCode the same way it works anywhere. The slash commands are a best-effort port and are marked **experimental** — OpenCode's command spec is still moving.
+The engine is standard MCP, so it works in OpenCode the same way it works anywhere. The slash commands are a best-effort port and are marked **experimental**, because OpenCode's command spec is still moving.
 
 ## 1. Wire the engine (the part that just works)
 
@@ -22,10 +22,10 @@ Add the Terminals MCP server to your OpenCode config (`opencode.json`, project o
 }
 ```
 
-Set the path to where you cloned this repo. No API key, no extra installs — the server is pure Python standard library. Now any OpenCode agent can call the `converge`, `explore`, `optimize`, `recommend`, and `frame` tools.
+Set the path to where you cloned this repo. No API key, no extra installs: the server is pure Python standard library. Now any OpenCode agent can call the `converge`, `explore`, `optimize`, `recommend`, and `frame` tools.
 
 ## 2. The slash commands (experimental)
 
 Copy `opencode/command/*.md` into your OpenCode commands directory (project `.opencode/command/` or global `~/.config/opencode/command/`). Then `/converge`, `/explore`, `/optimize`, `/recommend`, `/frame` are available. They carry the same protocol as the Claude Code versions and call the `terminals` MCP tools.
 
-If a command flavor lags an OpenCode change, the MCP path in step 1 still gives you the full engine — call the tools directly.
+If a command flavor lags an OpenCode change, the MCP path in step 1 still gives you the full engine. Call the tools directly.

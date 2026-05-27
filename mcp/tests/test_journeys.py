@@ -15,7 +15,7 @@ particular *answer* (that is the agent's semantic job). They check the engine's
   - the chain never upgrades a partial into a fake done;
   - everything is deterministic.
 
-If a journey's verdict here ever drifts, either the matrix or the engine moved —
+If a journey's verdict here ever drifts, either the matrix or the engine moved;
 both are findings.
 """
 import json

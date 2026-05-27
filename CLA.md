@@ -3,7 +3,7 @@
 
 # Contributor License Agreement (Terminals)
 
-> **Template — review by counsel before use.** This is a working draft of an
+> **Template: review by counsel before use.** This is a working draft of an
 > inbound CLA modeled on the structure of the Apache Individual CLA, adapted for
 > Intuition Labs LLC and for **dual-licensing**. It has not been reviewed by a
 > lawyer. Do not solicit signatures against it until counsel has checked it for
@@ -15,10 +15,10 @@ The Terminals engine ships under **AGPL-3.0**, and Intuition Labs LLC also offer
 it under a **commercial license** (see [`COMMERCIAL-LICENSE.md`](COMMERCIAL-LICENSE.md)).
 To be able to offer both, the project must hold a broad enough license to *your*
 contributions to relicense them. This CLA grants that license while **you keep
-ownership of your work.** It is a license, not an assignment.
+ownership of your work.** It operates purely as a license; ownership stays with you (it is not an assignment).
 
 If you do not sign, we cannot merge your contribution into the dual-licensed
-codebase — but you remain free to use, fork, and redistribute the project under
+codebase, but you remain free to use, fork, and redistribute the project under
 AGPL-3.0 like anyone else.
 
 ## Agreement
@@ -39,7 +39,7 @@ attachment), excluding anything You conspicuously mark "Not a Contribution."
 distributed by the Company a **perpetual, worldwide, non-exclusive, royalty-free,
 irrevocable copyright license** to reproduce, prepare derivative works of,
 publicly display, publicly perform, sublicense, and distribute Your Contributions
-and such derivative works — **under any license terms, including licenses other
+and such derivative works **under any license terms, including licenses other
 than AGPL-3.0** (this is what enables the dual-license). You retain ownership.
 
 **3. Patent license.** You grant the Company and recipients a **perpetual,
@@ -72,7 +72,7 @@ would make these representations inaccurate.
 Until an automated CLA-bot or e-signature flow is set up, sign by adding your line
 to `CONTRIBUTORS.md` in a pull request that states:
 
-> *I have read the CLA and I agree to it. — Full Name <email> (GitHub @handle), YYYY-MM-DD*
+> *I have read the CLA and I agree to it. Full Name <email> (GitHub @handle), YYYY-MM-DD*
 
 **Entities:** if you contribute on behalf of a company, an authorized
 representative should sign and list the entity name; the grants above apply to the

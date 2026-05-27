@@ -2,9 +2,9 @@
 # Copyright (c) 2026 Tej Desai / Intuition Labs LLC
 """Regression tests for the 2026-05-27 security audit findings.
 
-HIGH  — a deeply-nested JSON frame must not crash the stdio server.
-MED   — caller-supplied optimize max_steps must be clamped (no unbounded hang).
-LOW   — non-finite / out-of-range threshold must be sanitized (no NaN/Infinity leak).
+HIGH  : a deeply-nested JSON frame must not crash the stdio server.
+MED   : caller-supplied optimize max_steps must be clamped (no unbounded hang).
+LOW   : non-finite / out-of-range threshold must be sanitized (no NaN/Infinity leak).
 """
 import json
 import math
