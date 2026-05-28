@@ -7,7 +7,7 @@
 
 <h1 align="center">Terminals</h1>
 
-<p align="center"><b>Five small words that turn a messy pile of ideas into a coherent answer, trimmed to its cheapest form, with a receipt you can check.</b></p>
+<p align="center"><b>Seven small words that turn a messy pile of ideas into a coherent answer, trimmed to its cheapest form, with a receipt you can check.</b></p>
 
 You type one word. It does the thinking-shape for you and hands back an answer with a receipt that shows it holds together.
 
@@ -28,7 +28,7 @@ Type `/converge` and go. No API key. No setup. The math runs on your machine.
 
 ## The seven words
 
-Five words find the answer. Two more put it to work and keep it true.
+Seven words find the answer. Two more put it to work and keep it true.
 
 | word | it means | you get |
 |---|---|---|
