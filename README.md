@@ -28,7 +28,7 @@ Type `/converge` and go. No API key. No setup. The math runs on your machine.
 
 ## The seven words
 
-Seven words find the answer. Two more put it to work and keep it true.
+Five words find the answer. The last two (act and hold) put it to work and keep it true.
 
 | word | it means | you get |
 |---|---|---|
