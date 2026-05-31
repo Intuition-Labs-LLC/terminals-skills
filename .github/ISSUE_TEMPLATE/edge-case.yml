@@ -1,0 +1,53 @@
+name: Edge case for the convergence
+description: You hit a condition you would like the next update to handle. One shot — your agent can fill this from the session.
+title: "[edge case] "
+labels: ["edge-case", "convergence"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Found a condition the bench should handle but did not? Report it here so it can become a check in the next update.
+        Keep it small and concrete. If your agent ran the case, ask it to fill these fields from the session.
+  - type: textarea
+    id: condition
+    attributes:
+      label: The condition
+      description: What should the bench have handled, and how did it miss? One or two plain sentences.
+      placeholder: "When two ideas are near-duplicates, converge locks them as agreeing and hides a real third option."
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Smallest repro
+      description: The ideas and the coherence scores that misbehaved. Paste the receipt (r, phi, locked / loose) if you have it.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs got
+      description: What you expected the receipt to say, and what it said instead.
+    validations:
+      required: true
+  - type: textarea
+    id: general
+    attributes:
+      label: The general solution it points at (optional)
+      description: If you see the fix that would cover this case and others like it, say so. A void stated as a claim with a test is the most useful kind.
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Verb and version
+      description: Which verb, and the plugin version (see plugin.json).
+      placeholder: "/converge · terminals 0.2.0"
+  - type: checkboxes
+    id: clean
+    attributes:
+      label: Before you send
+      options:
+        - label: I checked this report for secrets and private content. Everything here is data I mean to share.
+          required: true
