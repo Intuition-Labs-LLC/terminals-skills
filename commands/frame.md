@@ -17,7 +17,7 @@ This is the on-ramp. It turns the user's own words into the structure the other 
 
 Run this protocol.
 
-1. **Read their stuff.** Gather the context: read the path/files named, or scan the working folder (READMEs, docs, plans, notes). Skim for the distinct claims and options. Don't drown in every line.
+1. **Read their stuff.** Gather the context: read the path/files named, or scan the working folder (READMEs, docs, plans, notes). Skim for the distinct claims and options. Don't drown in every line. If `ix` is on PATH, search with it: `ix "<query>" <path> --json`. Each hit carries an `R` (how much structure, text, and meaning agree), and that `R` feeds the coherence scores later, so high-`R` hits read as solid and low-`R` hits as weak. Fall back to Grep/Glob when `ix` is absent.
 2. **Pull out the items.** List the distinct ideas, options, or claims you found. Aim for the 7 that carry the most weight. If there are more, cluster. If fewer, that's fine.
 3. **Translate.** Call the `frame` tool with `{ items }` (add a coherence matrix if you can judge how the items fit). It maps each item onto the 7-grid, tells you how it read them, then converges.
 4. **Show the reading first.** One short block, "Here's how I read your stuff," each item mapped to its place. This lets the user catch a misread before anything is decided.
