@@ -15,7 +15,7 @@ What to make: **$ARGUMENTS**
 
 `/mint` is the maker. `/recommend` picks the best option from a set; `/mint` produces the made thing, the actual file, a plan or a doc or a decision or a checklist, finished and ready to use. It is the verb that writes one fresh artifact, the trinket made solid, and nothing else.
 
-Two shapes carry their own honesty inside them. A **hypothesis** is a hunch made solid: a claim you can't yet prove, the hole in the work it would fill, and the one test that would prove it or kill it, tagged a hunch by build, never wearing a done badge. A **finding** is an edge you hit: a case where the bench gave a shaky answer, kept small enough to see again, so the next version can handle it. See [the things /mint can make](../skills/mint/reference/objects.md).
+Two shapes carry their own honesty inside them. A **hypothesis** is a hunch made solid: a claim you can't yet prove, the hole in the work it would fill, and the one test that would prove it or kill it, tagged a hunch by build, never wearing a done badge. A **finding** is an edge you hit: a case where the bench gave a shaky answer, kept small enough to see again, so the next version can handle it. See [findings and hypotheses](../docs/FINDINGS.md).
 
 Run this protocol. Keep every word small.
 

@@ -31,4 +31,4 @@ The finished artifact is the point. Write it out, name the path, then the receip
 - The loop mint runs inside (explore, converge, optimize): `../explore/SKILL.md`, `../converge/SKILL.md`, `../optimize/SKILL.md`
 - The translation from "what you want" to "what to build": `../frame/SKILL.md`
 - What done = true does and doesn't establish, and the gate beyond it: `../converge/reference/realizability.md`
-- The two shapes that carry their own honesty — a **hypothesis** (a testable hunch, tagged a hunch by build) and a **finding** (an edge where the bench was shaky, kept so it can be fixed): `reference/objects.md`
+- The two shapes that carry their own honesty — a **hypothesis** (a testable hunch, tagged a hunch by build) and a **finding** (an edge where the bench was shaky, kept so it can be fixed): `../../docs/FINDINGS.md`
