@@ -1,0 +1,38 @@
+name: Finding — an edge you hit
+description: You used the tools and the answer came out wrong or shaky. Keep the case so the next version handles it.
+title: "[finding] "
+labels: ["finding"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You used the tools and the answer came out wrong or shaky. That's worth keeping. Fill in what you can — your agent already holds most of this. One shot, and the next version's convergence checks can learn your edge.
+  - type: textarea
+    id: condition
+    attributes:
+      label: The condition
+      description: The case where it went wrong, in one plain line.
+      placeholder: "When I converge two options that overlap on one point, it locks done = true but the answer drops the third option..."
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: The smallest way to see it again
+      description: The ideas and the scores that misbehaved — trimmed to the least that still shows it. Paste the receipt if you have one.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: The fix it points at
+      description: What the general solution might be, if you can name it. Leave it blank if you can't — the case is the valuable part.
+    validations:
+      required: false
+  - type: textarea
+    id: meaning
+    attributes:
+      label: Why it's worth keeping (optional)
+      description: What made this edge matter — what it told you the bench should do differently.
+    validations:
+      required: false

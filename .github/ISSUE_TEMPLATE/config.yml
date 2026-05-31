@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: How the bench works (read first)
+    url: https://github.com/Intuition-Labs-LLC/terminals-skills/blob/master/docs/CONCEPTS.md
+    about: The plain-English glossary — Point, Line, Lock, the two meters — before you file.
+  - name: What the bench emits (findings and hypotheses)
+    url: https://github.com/Intuition-Labs-LLC/terminals-skills/blob/master/docs/FINDINGS.md
+    about: How a meaningful run turns into a finding or a hypothesis you can publish.
