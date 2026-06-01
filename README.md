@@ -30,13 +30,11 @@ Type `/converge` and go. No API key. No setup. The math runs on your machine.
 
 ## For humans
 
-> Draft. The structure and the words are placeholder; the operator will re-voice this section in his own words. Remove this note when he does.
+It's a small bench with a few good tools on it. You sit down with a mess — a pile of notes, a hard call, three options that fight. You pick up a tool, you tinker, and you make a small thing you can hold and turn over. That small thing is a **trinket**, and it comes with a tag that says whether it holds.
 
-It is a small bench with a few good tools on it. You sit down with a mess: a pile of notes, a hard call, three options that fight. You pick up a tool, you tinker, and you make a small thing you can hold and turn over in your hands. That small thing is a **trinket**, and it comes with a tag that says whether it holds.
+Point it at your own work. Hand an AI your folder, your notes, a half-made decision, and tell it to use these. It reads your stuff as *your* context, runs the word that fits, and hands back an answer with a receipt — and the more of your real work it sees, the better the trinket fits the way you actually think.
 
-Point it at your own work. Hand an AI your folder, your notes, a half-made decision, and tell it to use these. It reads your stuff as *your* context, runs the word that fits, and hands back an answer with a receipt. The more of your real work it sees, the better the trinket fits the way you actually think.
-
-That is the whole shop: **tools that turn your mess into trinkets that hold.** The full picture, in plain words, is in [docs/WORKBENCH.md](docs/WORKBENCH.md). The smallest-word glossary is in [docs/CONCEPTS.md](docs/CONCEPTS.md).
+That's the whole shop: **tools that turn your mess into trinkets that hold.** The longer version, in plain words, is [docs/WORKBENCH.md](docs/WORKBENCH.md); the smallest-word glossary is [docs/CONCEPTS.md](docs/CONCEPTS.md).
 
 ## For AI (or any LLM handed this)
 
