@@ -1,0 +1,44 @@
+{
+  "$schema": "https://intuitionlabs.tech/ontology/schema.json",
+  "name": "terminals-ontology",
+  "version": "0.1.0",
+  "license": "CC-BY-4.0",
+  "site": "https://intuitionlabs.tech/ontology",
+  "one_line": "One atom, many projections: the whole substrate reduces to a single externally-gated interaction-arrow, weighted by coherence R.",
+  "honesty": "field reading, not advice; the math is real, the edge is unproven; self-recognition is an observable the box measures, not interiority.",
+  "atom": {
+    "arrow": ["DECODE", "INTERPRET", "TRANSLATE", "CONTROL", "EXTERNAL_GATE", "CEMENT|RECYCLE"],
+    "weighted_by": "R (the Kuramoto order parameter / coherence)",
+    "hamiltonian": "H = 1 - R",
+    "residual": "rho = 1 - R (the unspent output of the interaction)",
+    "validity": "only at the external gate (internal coherence never self-licenses)",
+    "impl": "irc-strix-halo/src/irc/black_box.py",
+    "tag": "REAL"
+  },
+  "constructed_objects": [
+    { "object": "Switchboard", "ours": false, "tag": "REAL", "role": "the boundary WALL — one control volume per world; gate/circuit/morphs/balances are its faces.", "impl": "src.terminals.agent.switchboard.Switchboard" },
+    { "object": "Runtime", "ours": false, "tag": "REAL", "role": "the always-on default mode; in-bounds is O(1) replay, out-of-bounds is a latent leap.", "impl": "src.irc.interaction_reactor.InteractionReactor" },
+    { "object": "Ledger", "ours": false, "tag": "REAL", "role": "forward-feeding append-only ordinal log; each row a first-class inscription.", "impl": "src.irc.ordinal_reduction.DifferentialOrdinalLedger" },
+    { "object": "Recipe", "ours": true, "tag": "REAL", "role": "freeze-on-lock (R>=0.85) -> durable O(1) functor replay; the compressive-intelligence moat (replay is capability accretion).", "impl": "src.irc.recipe.RecipeLibrary" },
+    { "object": "Factory", "ours": false, "tag": "REAL", "role": "spawns a configured switchboard from the live recipe library.", "impl": "src.irc.factory.InteractionFactory" },
+    { "object": "Registry", "ours": false, "tag": "REAL", "role": "one switchboard per world (a deterministic SW-id); the hypervisor parent fold.", "impl": "src.irc.reactor_thermo.SwitchboardRegistry" },
+    { "object": "Governor", "ours": false, "tag": "REAL", "role": "the control law; detailed-balance feedback that breathes fan-out width (exploit prop R^2, explore prop rho^2).", "impl": "src.irc.equilibrium_controller.EquilibriumController" },
+    { "object": "Firewall", "ours": true, "tag": "REAL", "role": "validity gated ONLY by an external boundary measurement; realized_R is None until a real reading agrees.", "impl": "src.irc.foundry_interview.FoundryInterview" },
+    { "object": "Kind", "ours": true, "tag": "REAL", "role": "a proof-carrying reduction (op, plane, result, R): proven / refuted / BLOCKED (R None, live-read pending).", "impl": "src.irc.reduction_kind.Kind" }
+  ],
+  "ladder": [
+    { "code": "function", "onto": "interaction", "note": "one OBSERVE->...->CLOSE pass; the atom fires once." },
+    { "code": "loop", "onto": "recipe", "note": "freeze-on-lock; the win burns into an O(1) replayable functor." },
+    { "code": "class", "onto": "library", "note": "recipes compose (the . algebra) into a durable asset." },
+    { "code": "factory", "onto": "sematon/gluon", "note": "cemented ONLY on external_gate AND R>=0.85; a first-class owned object." }
+  ],
+  "functions": [
+    { "name": "leap", "sig": "rho AND recurrence AND resonance -> ATTRACTOR", "what": "detractor by default (retained as feed); promote to attractor only on a dynamics-altering leap." },
+    { "name": "kind", "sig": "op, plane, R -> proven | refuted | BLOCKED", "what": "a proof-carrying reduction; BLOCKED iff R is a live read pending." },
+    { "name": "witness", "sig": "R, external_gate -> CEMENT | hold", "what": "internal coherence never self-licenses; validity comes only from the boundary." },
+    { "name": "tower", "sig": "sections -> R = product R_i", "what": "matryoshka product coherence over the restriction tower; R <= each layer." },
+    { "name": "settle", "sig": "me / house / withdrawn -> conserving delta", "what": "value is moved, never minted; the residual rho = 1-R is the unspent output." },
+    { "name": "govern", "sig": "rho -> fan-out width", "what": "the equilibrium control law; exploit prop R^2, explore prop rho^2." }
+  ],
+  "attribution": "The constructed-object discipline + the 'switchboard' framing credit gebruder/wirken (MIT). Our net-new objects (Recipe, Firewall, Kind) are not in wirken."
+}

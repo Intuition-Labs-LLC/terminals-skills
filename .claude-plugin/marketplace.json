@@ -12,7 +12,7 @@
     {
       "name": "terminals",
       "source": "./",
-      "description": "Seven verbs: /explore /converge /optimize /recommend /frame /act /hold. Turn a messy idea-pile into an answer that carries its own receipt, then act on it and keep it true."
+      "description": "Seven verbs: /explore /converge /optimize /recommend /frame /act /hold — turn a messy idea-pile into an answer that carries its own receipt, then act on it and keep it true. Plus /ontology: the constructed objects + ontological functions of Terminals OS (one atom, many projections)."
     }
   ]
 }

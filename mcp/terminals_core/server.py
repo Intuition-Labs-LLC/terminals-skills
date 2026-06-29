@@ -12,7 +12,7 @@ from __future__ import annotations
 import json
 import sys
 
-from . import engine
+from . import engine, ontology
 
 SERVER_NAME = "terminals"
 SERVER_VERSION = "0.1.0"
@@ -25,6 +25,28 @@ _NUM_MATRIX = {
 }
 
 TOOLS = [
+    {
+        "name": "ontology",
+        "description": (
+            "The Terminals ontology — one atom, many projections. The whole substrate reduces to a "
+            "single externally-gated interaction-arrow (decode->interpret->translate->control->GATE->"
+            "{cement|recycle}), weighted by coherence R, descending H=1-R. Returns the atom, the 9 "
+            "constructed objects (Switchboard/Runtime/Ledger/Recipe/Factory/Registry/Governor/"
+            "Firewall/Kind), the isoformer ladder (interaction->recipe->library->sematon), and the "
+            "ontological functions (leap, kind, witness, tower, settle, govern). Pass `query` to "
+            "filter to a section (atom|ladder|functions|objects) or a named object/function "
+            "(e.g. 'Recipe', 'leap'). Field reading, not advice; the math is real, the edge unproven."
+        ),
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Optional filter: a section (atom|ladder|functions|objects) or a named object/function.",
+                },
+            },
+        },
+    },
     {
         "name": "converge",
         "description": (
@@ -135,6 +157,8 @@ TOOLS = [
 
 
 def dispatch(name, args):
+    if name == "ontology":
+        return ontology.read(args.get("query"))
     if name == "converge":
         return engine.converge(args["ideas"], args.get("coherence"), args.get("threshold", engine.DEFAULT_THRESHOLD))
     if name == "explore":
